@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reimagining CAPTCHAs – Research Overview</title>
+  <style>
+    /* Basic reset and typography */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    /* Grid container for the tiles */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    /* Styling each tile */
+    .tile {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .tile:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    footer {
+      background-color: #007BFF;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Reimagining CAPTCHAs – Research Overview</h1>
+  </header>
+  
+  <div class="container">
+    <div class="tile" onclick="window.location.href='purpose.html'">
+      <h2>Purpose of CAPTCHAs</h2>
+      <p>Why they exist and their role in security.</p>
+    </div>
+    <div class="tile" onclick="window.location.href='accessibility.html'">
+      <h2>Accessibility Challenges</h2>
+      <p>Impact on users with disabilities.</p>
+    </div>
+    <div class="tile" onclick="window.location.href='alternatives.html'">
+      <h2>Alternatives & Solutions</h2>
+      <p>Exploring accessible, inclusive methods.</p>
+    </div>
+    <div class="tile" onclick="window.location.href='ai_limitations.html'">
+      <h2>AI Limitations</h2>
+      <p>Understanding AI’s current boundaries.</p>
+    </div>
+    <div class="tile" onclick="window.location.href='privacy.html'">
+      <h2>Privacy & Security</h2>
+      <p>Privacy concerns in data-driven approaches.</p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Reimagining CAPTCHAs Project
+  </footer>
+</body>
+</html>
