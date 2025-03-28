@@ -1,95 +1,685 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Purpose of CAPTCHAs</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Understanding the purpose and challenges of CAPTCHA systems in web security and accessibility">
+  <title>Purpose of CAPTCHAs | Reimagining CAPTCHAs Project</title>
   <style>
-    /* Basic reset and typography */
-    body {
+    :root {
+      --primary-color: #012c5a;
+      --primary-dark: #011d41;
+      --secondary-color: #e6f0f7;
+      --text-color: #333;
+      --white: #fff;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+    
+    /* Base reset */
+    * {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
-      background-image: url('HomeBackground.png');
-      background-size: cover;
-      background-position: center;
+      box-sizing: border-box;
     }
-    header {
-      background-color: #012c5a;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
+    
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      /* Background image with fixed attachment */
+      background: url('robotImage.png') no-repeat center center fixed;
+      background-size: cover;
       position: relative;
     }
-    /* Home icon styles */
+    
+    /* Increased dark overlay for a subtler background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: -1;
+    }
+    
+    header {
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 1.2rem;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+    
     .home-icon {
       position: absolute;
-      left: 20px;
+      left: 1.5rem;
       top: 50%;
       transform: translateY(-50%);
+      transition: var(--transition);
     }
+    
+    .home-icon:hover {
+      transform: translateY(-50%) scale(1.1);
+    }
+    
     .home-icon img {
-      height: 40px;
+      height: 2.5rem;
       width: auto;
-      cursor: pointer;
     }
-    .content {
+    
+    main.content {
       max-width: 800px;
-      margin: 100px auto;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 20px;
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
       border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: var(--shadow);
+      position: relative;
+      z-index: 1;
     }
-    h1 {
-      margin-top: 0;
+    
+    .hero-image {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
     }
-    p {
-      line-height: 1.6;
-      margin-bottom: 1rem;
+    
+    main.content p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
     }
-    a {
+    
+    /* Added bullet list style */
+    ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+    
+    .highlight-box {
+      background-color: rgba(240, 240, 240, 0.95);
+      border-left: 4px solid var(--primary-color);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    
+    .highlight-box p {
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    
+    .btn {
       display: inline-block;
-      margin-top: 20px;
-      text-decoration: none;
-      background-color: #012c5a;
-      color: #fff;
-      padding: 10px 20px;
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 0.8rem 1.5rem;
       border-radius: 4px;
-      transition: background-color 0.2s;
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      margin-top: 1rem;
     }
-    a:hover {
-      background-color: #011d41;
+    
+    .btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
+    
     footer {
-      background-color: #012c5a;
-      color: #fff;
+      background-color: var(--primary-color);
+      color: var(--white);
       text-align: center;
-      padding: 1rem;
+      padding: 1.2rem;
+      width: 100%;
       position: fixed;
       bottom: 0;
-      width: 100%;
+      left: 0;
+      z-index: 1;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      main.content {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      .home-icon {
+        left: 1rem;
+      }
+      
+      main.content p {
+        font-size: 1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      header {
+        padding: 1rem 0.5rem;
+      }
+      
+      .home-icon {
+        left: 0.5rem;
+      }
+      
+      main.content {
+        margin: 0.5rem;
+        padding: 1rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <a href="index.html" class="home-icon">
+    <a href="index.html" class="home-icon" aria-label="Return to home page">
       <img src="home icon.png" alt="Home">
     </a>
     <h1>Purpose of CAPTCHAs</h1>
   </header>
-  <div class="content">
+  
+  <main class="content">
+
+    <img src="robotImage.png" alt="Illustrative image on CAPTCHA purpose" class="hero-image">
     <p>
-      CAPTCHAs (Completely Automated Public Turing tests to tell Computers and Humans Apart) are designed to distinguish human users from automated bots. They help protect websites by preventing spam, brute force attacks, and other malicious activities.
+      CAPTCHAs (<strong>Completely Automated Public Turing tests to tell Computers and Humans Apart</strong>) serve as a critical security mechanism on the modern web. They help protect websites from spam, brute force attacks, and other malicious activities by distinguishing legitimate human users from automated bots.
     </p>
+    
+    <ul>
+      <li><strong>Security:</strong> Prevents automated attacks and spam.</li>
+      <li><strong>User Verification:</strong> Differentiates humans from bots using interactive challenges.</li>
+      <li><strong>Evolution:</strong> Has evolved from simple text tests to sophisticated image and behavioral analysis.</li>
+    </ul>
+    
+    <div class="highlight-box">
+      <p>"CAPTCHAs help protect websites from spam, brute force attacks, and other automated threats while ensuring that genuine users can access services seamlessly."</p>
+    </div>
+    
     <p>
-      However, traditional CAPTCHAs often create significant accessibility challenges for users with disabilities. Our research explores these challenges and investigates innovative, inclusive alternatives that maintain security while improving user accessibility.
+      Developed in the early 2000s, CAPTCHAs have transformed significantly. However, this evolution has often compromised accessibility for users with disabilities. Our project delves into these challenges and explores innovative solutions that balance robust security with improved accessibility.
     </p>
-    <a href="index.html">Back to Home</a>
-  </div>
+    
+    <a href="index.html" class="btn">Back to Home</a>
+  </main>
+  
+  <footer>
+    &copy; 2025 Reimagining CAPTCHAs Project
+  </footer>
+</body>
+</html> -->
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Understanding the purpose and challenges of CAPTCHA systems in web security and accessibility">
+  <title>Purpose of CAPTCHAs | Reimagining CAPTCHAs Project</title>
+  <style>
+    :root {
+      --primary-color: #012c5a;
+      --primary-dark: #011d41;
+      --secondary-color: #e6f0f7;
+      --text-color: #333;
+      --white: #fff;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+    
+    /* Base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      /* Background image with fixed attachment */
+      background: url('robotImage.png') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+    
+    /* Dark overlay for better readability */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+    
+    header {
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 1.2rem;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+    
+    .home-icon {
+      position: absolute;
+      left: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: var(--transition);
+    }
+    
+    .home-icon:hover {
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    .home-icon img {
+      height: 2.5rem;
+      width: auto;
+    }
+    
+    main.content {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero-image {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+    
+    main.content p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+    
+    .highlight-box {
+      background-color: rgba(1, 44, 90, 0.05);
+      border-left: 4px solid var(--primary-color);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    
+    .highlight-box p {
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    
+    .btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    footer {
+      background-color: var(--primary-color);
+      color: var(--white);
+      text-align: center;
+      padding: 1.2rem;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      main.content {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      .home-icon {
+        left: 1rem;
+      }
+      
+      main.content p {
+        font-size: 1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      header {
+        padding: 1rem 0.5rem;
+      }
+      
+      .home-icon {
+        left: 0.5rem;
+      }
+      
+      main.content {
+        margin: 0.5rem;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="home-icon" aria-label="Return to home page">
+      <img src="home icon.png" alt="Home">
+    </a>
+    <h1>Purpose of CAPTCHAs</h1>
+  </header>
+  
+  <main class="content">
+   
+    <img src="robotImage.png" alt="Illustrative image on CAPTCHA purpose" class="hero-image">
+    <p>
+      CAPTCHAs (Completely Automated Public Turing tests to tell Computers and Humans Apart) serve as a critical security mechanism on the modern web. These challenges are designed to distinguish legitimate human users from automated bots, helping to protect websites from spam, brute force attacks, and other malicious activities.
+    </p>
+    
+    <div class="highlight-box">
+      <p>"CAPTCHAs help protect websites from spam, brute force attacks, and other automated threats while ensuring that genuine users can access services seamlessly."</p>
+    </div>
+    
+    <p>
+      Developed in the early 2000s, CAPTCHAs have evolved from simple text-based tests to sophisticated image and behavior-based challenges. However, this evolution has often compromised accessibility for users with disabilities. Our project delves into these challenges and explores innovative solutions that balance security and accessibility.
+    </p>
+    
+    <a href="index.html" class="btn">Back to Home</a>
+  </main>
+  
+  <footer>
+    &copy; 2025 Reimagining CAPTCHAs Project
+  </footer>
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Understanding the purpose and challenges of CAPTCHA systems in web security and accessibility">
+  <title>Purpose of CAPTCHAs | Reimagining CAPTCHAs Project</title>
+  <style>
+    :root {
+      --primary-color: #012c5a;
+      --primary-dark: #011d41;
+      --secondary-color: #e6f0f7;
+      --text-color: #333;
+      --white: #fff;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+    
+    /* Base reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background: none;
+      position: relative;
+    }
+    
+    /* Background wrapper with blue color */
+    .background-wrapper {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      background-color: var(--secondary-color);
+    }
+    
+    /* Background images added to the page */
+    .bg-img {
+      position: fixed;
+      z-index: 1;
+      width: 500px;
+      opacity: 0.3;
+    }
+    .bg-img-1 {
+      top: 10%;
+      left: 5%;
+      transform: rotate(-10deg);
+    }
+    .bg-img-2 {
+      bottom: 10%;
+      left: 5%;
+      transform: rotate(8deg);
+    }
+    .bg-img-3 {
+      top: 30%;
+      right: 5%;
+      transform: rotate(5deg);
+    }
+    
+    header {
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 1.2rem;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow);
+      z-index: 2;
+    }
+    
+    .home-icon {
+      position: absolute;
+      left: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: var(--transition);
+      z-index: 3;
+    }
+    
+    .home-icon:hover {
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    .home-icon img {
+      height: 2.5rem;
+      width: auto;
+    }
+    
+    main.content {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero-image {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+    
+    main.content p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+    
+    /* Bullet list styling */
+    ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+    
+    .highlight-box {
+      background-color: rgba(240, 240, 240, 0.95);
+      border-left: 4px solid var(--primary-color);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    
+    .highlight-box p {
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    
+    .btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    footer {
+      background-color: var(--primary-color);
+      color: var(--white);
+      text-align: center;
+      padding: 1.2rem;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      main.content {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      .home-icon {
+        left: 1rem;
+      }
+      
+      main.content p {
+        font-size: 1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      header {
+        padding: 1rem 0.5rem;
+      }
+      
+      .home-icon {
+        left: 0.5rem;
+      }
+      
+      main.content {
+        margin: 0.5rem;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background wrapper with blue background -->
+  <div class="background-wrapper"></div>
+  
+  <!-- Background images -->
+  <img src="types.png" class="bg-img bg-img-1" alt="CAPTCHA types illustration">
+  <img src="evolution.png" class="bg-img bg-img-2" alt="Evolution of CAPTCHAs illustration">
+  <img src="cartoon.png" class="bg-img bg-img-3" alt="CAPTCHA cartoon illustration">
+  
+  <header>
+    <a href="index.html" class="home-icon" aria-label="Return to home page">
+      <img src="home icon.png" alt="Home">
+    </a>
+    <h1>Purpose of CAPTCHAs</h1>
+  </header>
+  
+  <main class="content">
+    <!-- Hero image to enhance visual appeal (using one of the background images) -->
+    <img src="robotImage.png" alt="Illustrative image on CAPTCHA purpose" class="hero-image">
+    <p>
+      CAPTCHAs (<strong>Completely Automated Public Turing tests to tell Computers and Humans Apart</strong>) serve as a critical security mechanism on the modern web. They help protect websites from spam, brute force attacks, and other malicious activities by distinguishing legitimate human users from automated bots.
+    </p>
+    
+    <ul>
+      <li><strong>Security:</strong> Prevents automated attacks and spam.</li>
+      <li><strong>User Verification:</strong> Differentiates humans from bots using interactive challenges.</li>
+      <li><strong>Evolution:</strong> Has evolved from simple text tests to sophisticated image and behavioral analysis.</li>
+    </ul>
+    
+    <div class="highlight-box">
+      <p>"CAPTCHAs help protect websites from spam, brute force attacks, and other automated threats while ensuring that genuine users can access services seamlessly."</p>
+    </div>
+    
+    <p>
+      Developed in the early 2000s, CAPTCHAs have transformed significantly. However, this evolution has often compromised accessibility for users with disabilities. Our project delves into these challenges and explores innovative solutions that balance robust security with improved accessibility.
+    </p>
+    
+    <a href="index.html" class="btn">Back to Home</a>
+  </main>
+  
   <footer>
     &copy; 2025 Reimagining CAPTCHAs Project
   </footer>
