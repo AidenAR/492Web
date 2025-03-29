@@ -270,6 +270,7 @@
       margin-top: 3rem;
     }
   </style>
+  <script src="bot-detector-script.js" defer></script>
 </head>
 <body>
   <header>
@@ -308,7 +309,140 @@
 
   <section>
     <h2>The Way Forward: Background Bot Detection</h2>
-    <p>Future systems could detect bots silently in the background through behavioral analysis and browser fingerprinting. While this approach improves usability, it raises significant concerns about user privacy and data consent.</p>
+    <p>
+      Considering the glaring accessibility issues of CAPTCHA tests, there needs to be a completely different paradigm for distinguishing 
+      bots from humans. Based on our research findings and discussions with experts, the way forward will be methods that 
+      operate completely in the background; required user interactions inevitably create potential accessibility issues, insufficient 
+      security, or both.
+    </p>
+
+    <h3>Cloudflare's Approach</h3>
+    <p>
+      Cloudflare's <a href="https://www.cloudflare.com/en-ca/application-services/products/turnstile/" target="_blank">Turnstile</a> is one 
+      such invisible alternative to interactive CAPTCHA tests. Turnstile is <a href="https://www.dpi.nc.gov/about-dpi/technology-services/digital-accessibility/wcag-21-level-aa" target="_blank">WCAG 2.1 AA</a>
+      compliant service that analyzes browser attributes, network signals, and user behaviour. Machine learning algorithms use this information
+      to determine the liklihood that the user is a bot; based on this determination, a cryptographic <i>challenge</i> of varying difficulty 
+      will be given. This challenge runs in the background, granting a token upon completion. Beyond avoiding accessibility concerns, an 
+      advantage of the service is the ability to fine-tune the difficulty of the cryptographic challenge. Common features of site users 
+      that previously completed the challenge are tracked, letting Turnstile slow down future bot traffic.
+    </p>
+
+    <img src="turnstile-diagram.jpeg" alt="Cloudflare Turnstile diagram" style="max-width: 100%; height: auto; border-radius: 20px">
+
+    <h3>So, what's the catch?</h3>
+    <p>
+      Despite the numerous advantages of a service like Turnstile, there has to be a catch, right? Our findings suggest that gains made in 
+      accessibility may be traded for greater privacy concerns.
+    </p>
+    <p>
+      As of January 2025, Cloudflare services were being used in <a href="https://backlinko.com/cloudflare-users" target="_blank">24 million</a> 
+      active websites across the globe. Zooming into the 10,000 most visited websites worldwide,
+    </p>
+    <h4 style="text-align:center;">over 43% utilize Cloudflare services.</h4>
+    <p>
+      With such a prolific userbase, Cloudflare has the ability to silently gather data on virtually <i>everyone</i>. In Canada, we have 
+      the <a href="https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/" target="_blank">Personal Information Protection and Electronic Documents Act</a>
+      to protect us from unreasonable and non-consentual data gathering, but data privacy laws are not uniform across the globe. Further, 
+      even with data privacy legislation, there is no guarantee that companies like Cloudflare will comply in totality and it can be extrodinarily
+      difficult to prove that companies are illicitly gathering or using data away from the public eye.
+    </p>
+  </section>
+
+  <section>
+    <h2>This Website's Built-In Bot Detection</h2>
+    <div>
+      <h3 id="result" style="text-align:center"></h3>
+      <img id="resultImage" style="max-width: 40%; height: auto; border-radius: 30px; display: block;
+      margin-left: auto; margin-right: auto;">
+    </div>
+    <div>
+      <p>
+          Instead of requiring users to complete a CAPTCHA puzzle to determine if they are human, this website detects bots entirely in the
+          background and non-invasively. This website's underlying detection script focuses on analyzing data from the user's browser and 
+          scroll behaviour, which can contain common signs of bots that can be detected in real-time.
+  
+      </p>
+      <h3>What are some indicator signs of bots?</h3>
+      <ul>
+          <li>
+              <b>Scroll behaviour analysis.</b> The background script will pick up on how quickly the user begins scrolling through the website
+              upon loading the page. Bots can load a web page and begin scrolling nearly instantly: far quicker than any human would be 
+              reasonably expected to. For demonstration purposes, if you scroll this page within 300ms of loading it, you will 
+              be flagged as a bot (in reality, this threshold would be much lower).
+          </li>
+          <li>
+              <b>The browser's <i>Navigator</i> object. </b> The <i>Navigator</i> object represents the state and identity of the user's
+              browser, such as its version, operating system, and capabilities. Some automation tools will set the <i>navigator.webdriver</i>
+              property to <i>true</i> as an indication of being controlled by an automated bot.<br> 
+          </li>
+          <li>
+              <b>The <i>Headless</i> indicator. </b> The <i>Headless</i> flag in a browser is a common indication of a user agent that is 
+              designed to scrape website data or perform other script-based activities. With these two property checks, most basic bot activity 
+              can be detected.
+          </li>
+          <li>
+              <b>Default language. </b> Browsers used by humans almost always have a set default language, which makes it simple for website 
+              content to be loaded in the user's preferred language, if available. However, bots typically do not have this property set, 
+              providing another indicator of bot activity.
+          </li>
+          <li>
+              <b>The browser's <i>eval</i> function. </b> Since bots can fake user-agent strings that the previous indicators rely on,
+              checking deeper properties of JavaScript functions can help detect inconsistencies. This website's script verifies properties 
+              like the length of the <i>eval</i> function, which should be consistent for each browser. If a a mismatch is detected, which 
+              may occur in headless or modified browsers, it suggests the environment might be automated or tampered with.
+          </li>
+          <li>
+              <b>The <i>Document Object Model</i>.</b> The DOM is a structured representation of a web page that browsers create when loading 
+              web pages. The page is organized as a tree of elements to be dynamically interacted with. Some automation tools add specific 
+              attributes to the DOM that can reveal bot activity, which this website's script can pick up on.
+          </li>
+      </ul>
+    </div>
+  
+    <div>
+      <h3>Try it yourself!</h3>
+      <p>
+        You can try out the behaviour analysis portion of the bot detection script by refreshing this page and scrolling within 300ms. If 
+        you do, the "Bot Detected" message will appear!
+      </p>
+      <p>
+          Alternatively, you can go to <b><a target="_blank" href="https://chrome.browserless.io/debugger/">Browserless Debugger</a></b>,
+          which can emulate bot activity with a Headless browser. Replace the code with the following, then click the play button at the top-right. Wait a moment for 
+          it to load, then this page will be displayed with a "Bot Detected" message!
+      </p>
+      <h4>Copy-paste this code:</h4>
+      <code>
+          export default async ({ page }: { page: Page }) => { await page.goto('https://google.com/'); }
+      </code>
+      <p><b>***There will be a screenshot here of what it should look like***</b></p>
+    </div>
+  
+    <div>
+      <h3>What are some limitations to this approach?</h3>
+      <p>
+          Unfortunately, this website's bot detection script isn't perfect. In the grand scheme of bot detection, it has quite a narrow focus, 
+          detecting only a few indicators like navigator.webdriver and “Headless” in the user agent, which more advanced bots would be 
+          capable of bypassing. It also targets a limited number of tools, letting it work well against certain automation tools, but it may 
+          miss bots using other techniques. Further, legitimate variations in browsers can affect detection accuracy. Finally, with the 
+          constantly evolving nature of technology, both bots and browsers are always changing; continued efficacy requires consistent 
+          adaptations to new automated bot techniques.
+      </p>
+      <p>
+          Further improvements could be made by expanding the scope beyond browser-based analysis. Although more intrusive from a privacy 
+          perspective, analyzing user behaviour such as scrolling patterns, mouse movements, and speed of traversal through the site would 
+          provide additional information valuable for bot detection. However, these methods may also be more conducive to false-positives from 
+          to accessibility devices. For example, a specialized mouse or interactive device may <i>appear</i> to be bot-generated behaviour 
+          if it deviates from typical mouse movement patterns. It is crucial that website developers do not compromise on accessibility in
+          favour of bot prevention.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>What can you do as a future developer?</h2>
+    <p>
+      Call to action here...
+    </p>
   </section>
 
   <footer>
