@@ -1,0 +1,331 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Reimagining CAPTCHAs – Research Overview</title>
+   <style>
+     body {
+       margin: 0;
+       padding: 0;
+       font-family: Arial, sans-serif;
+       font-size: 1.6rem;
+       background-color: #f5f5f5;
+       color: #333;
+       line-height: 1.6;
+     }
+     header {
+       background-color: #012c5a;
+       color: #fff;
+       padding: 2rem;
+       text-align: center;
+     }
+     header h1 {
+       font-size: 3rem;
+       margin: 0;
+     }
+     section {
+       padding: 2rem;
+       max-width: 1000px;
+       margin: auto;
+     }
+     h1, h2, h3, h4 {
+       margin-top: 1rem;
+       margin-bottom: 1rem;
+       font-weight: bold;
+     }
+     h2 {
+       color: #012c5a;
+       font-size: 2.5rem;
+     }
+     h3 {
+       color: #012c5a;
+       font-size: 2rem;
+     }
+     h4 {
+       color: #012c5a;
+       font-size: 1.5rem;
+     }
+     p {
+       font-size: 1.8rem;
+     }
+     .card-grid {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+       gap: 1.5rem;
+       margin-bottom: 2rem;
+     }
+     .card-grid1 {
+       display: grid;
+       grid-template-columns: repeat(4, 1fr);
+   
+     }
+     .card {
+       background-color: #fff;
+       padding: 1.5rem;
+       border-radius: 8px;
+       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+     }
+     .card img {
+       width: 100%;
+       height: 400px;
+       object-fit: cover;
+       border-radius: 8px;
+       margin-bottom: 1rem;
+     }
+     .card ul {
+       margin-left: 1.5rem;
+     }
+     .highlight {
+       color: #d6336c;
+       font-weight: bold;
+     }
+     .highlight1 {
+       color: #9533d6;
+       font-weight: bold;
+     }
+     .highlight-box {
+      background-color: #ffefef;
+      border-left: 4px solid #d6336c;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+    }
+     footer {
+       background-color: #012c5a;
+       color: #fff;
+       text-align: center;
+       padding: 1rem;
+       margin-top: 3rem;
+     }
+     
+     a {
+       color: #012c5a;
+       text-decoration: underline;
+     }
+   </style>
+   <script src="bot-detector-script.js" defer></script>
+ </head>
+ <body>
+   <header>
+     <h1>Reimagining CAPTCHAs – A Continuous Scroll Journey</h1>
+   </header>
+
+   
+   <!-- Introduction -->
+   <section>
+     <h2>Why CAPTCHAs Exist in the First Place</h2>
+     <p>
+       CAPTCHAs (Completely Automated Public Turing test to tell Computers and Humans Apart) were created to protect websites from bots by verifying that the user is a real human. They serve as gatekeepers to prevent spam, abuse, and automated attacks.
+     </p>
+     
+     <ul>
+       <li><strong>Security:</strong> Prevents automated attacks and spam.</li>
+       <li><strong>User Verification:</strong> Differentiates humans from bots using interactive challenges.</li>
+       <li><strong>Evolution:</strong> Has evolved from simple text tests to sophisticated image and behavioral analysis.</li>
+     </ul>
+     
+     <div class="highlight-box">
+       <p>"CAPTCHAs help protect websites from spam, brute force attacks, and other automated threats while ensuring that genuine users can access services seamlessly."</p>
+     </div>
+     
+     <p>
+       Developed in the early 2000s, CAPTCHAs have transformed significantly. However, this evolution has often compromised accessibility for users with disabilities. Our project delves into these challenges and explores innovative solutions that balance robust security with improved accessibility.
+     </p>
+
+     <img src="cartoon.png" alt="Cartoon illustration" class="intro-image" />
+
+     <h3>Why This Matters</h3>
+     <p>
+       CAPTCHAs are everywhere—but traditional implementations often impose significant challenges for individuals with disabilities. It’s <span class="highlight">crucial</span> that everyone can navigate the digital world without barriers.
+     </p>
+   </section>
+
+
+   
+ 
+   <!-- Key Aspects / Features Section -->
+   <section>
+     <h2>Key Aspects of Our Research</h2>
+     <div class="card-grid">
+       <div class="card">
+         <h3>Current Challenges</h3>
+         <p>
+           Traditional CAPTCHAs pose various accessibility challenges for users with visual, auditory, cognitive, and motor impairments.
+         </p>
+       </div>
+       <div class="card">
+         <h3>AI Limitations</h3>
+         <p>
+           Although AI is advancing rapidly, it has inherent limitations that can be leveraged for more accessible security measures without relying on traditional CAPTCHA tests.
+         </p>
+       </div>
+       <div class="card">
+         <h3>Better Alternatives</h3>
+         <p>
+           Our research explores emerging alternatives like behavior-based detection, cryptographic puzzles, and contextual analysis to improve accessibility while ensuring security.
+         </p>
+       </div>
+     </div>
+   </section>
+ 
+   <!-- CAPTCHA Accessibility Challenges -->
+   <section>
+     <h2>CAPTCHA Accessibility Challenges</h2>
+     <div class="card-grid">
+       <!-- Visual Impairment Card -->
+       <div class="card">
+         <img src="difficult_to_read_captcha.png" alt="Person with visual impairment using a computer" />
+         <h3>Visual Impairment Challenges</h3>
+         <p>
+           Image-based CAPTCHAs present significant barriers:
+         </p>
+         <ul>
+           <li><strong>Screen readers</strong> cannot interpret distorted text or images.</li>
+           <li>Low vision users struggle with low contrast and distortion.</li>
+           <li><strong>Color blindness</strong> affects element differentiation.</li>
+           <li>Audio alternatives often contain distracting background noise.</li>
+         </ul>
+         <p>
+           Over <span class="highlight">77%</span> of visually impaired users report difficulties with image-based CAPTCHAs.
+         </p>
+       </div>
+       <!-- Auditory Impairment Card -->
+       <div class="card">
+         <img src="audio-captcha.png" alt="Person wearing hearing aids" />
+         <h3>Auditory Impairment Challenges</h3>
+         <p>
+           Audio CAPTCHAs can be problematic:
+         </p>
+         <ul>
+           <li>Deaf or hard-of-hearing users cannot access audio challenges.</li>
+           <li>Background noise reduces clarity even for mild hearing loss.</li>
+           <li>Distorted sounds make comprehension difficult.</li>
+           <li>Users with both visual and hearing impairments are doubly affected.</li>
+         </ul>
+         <p>
+           Studies show audio CAPTCHAs can take up to <span class="highlight">3x longer</span> to complete with a higher failure rate.
+         </p>
+       </div>
+     </div>
+ 
+     <!-- Second Row: Cognitive and Motor Challenges -->
+     <div class="card-grid">
+       <!-- Cognitive Challenges Card -->
+       <div class="card">
+         <img src="cognitiveCaptcha.png" alt="Person frustrated with complex instructions" />
+         <h3>Cognitive Challenges</h3>
+         <p>
+           Complex instructions and time limits create significant barriers:
+         </p>
+         <ul>
+           <li>Users with dyslexia or learning disabilities struggle with distorted text.</li>
+           <li>Logic puzzles can be overwhelming.</li>
+           <li>Switching between tasks increases cognitive load.</li>
+         </ul>
+         <p>
+           Research indicates up to a <span class="highlight">50% higher failure rate</span> for users with learning disabilities.
+         </p>
+       </div>
+       <!-- Motor Impairment Challenges Card -->
+       <div class="card">
+         <img src="motorCap.png" alt="Person using an adaptive mouse device" />
+         <h3>Motor Impairment Challenges</h3>
+         <p>
+           Interactive CAPTCHAs pose unique challenges:
+         </p>
+         <ul>
+           <li>Drag-and-drop puzzles are hard for those using alternative input devices.</li>
+           <li>Click-based challenges may not register with assistive tech.</li>
+           <li>Small clickable areas require precision.</li>
+           <li>Behavior-based tests might mistakenly flag users.</li>
+         </ul>
+         <p>
+           <!-- Some studies report up to a <span class="highlight">60% higher failure rate</span> among users with motor impairments. -->
+         </p>
+       </div>
+     </div>
+     <p style="font-size: 1.4rem; color: #555; text-align: center;">
+      Sources: Stanford How Good are Humans at Solving CAPTCHAs? A Large Scale Evaluation, A study on Accessibility of Google ReCAPTCHA Systems (Gaggi, 2022), CAPTCHA: Impact on User Experience of Users with
+      Learning Disabilities (Ruti Gafni and Idan Nagar, The Academic College of Tel-Aviv–Yaffo)
+
+    </p>
+   </section>
+ 
+   <!-- CAPTCHA Limitations & Global Impact -->
+   <section>
+     <h2>CAPTCHA Limitations & Global Impact</h2>
+     <div class="card-grid">
+       <!-- Security vs Accessibility Tradeoffs Card -->
+       <div class="card">
+         <img src="security_vs_accessibility.jpg" alt="Security vs Accessibility" />
+         <h3>Security vs. Accessibility Tradeoffs</h3>
+         <ul>
+           <li>More secure CAPTCHAs tend to be less accessible.</li>
+           <li>Simplified CAPTCHAs are easier but less effective.</li>
+           <li>Modern approaches can overcome this false dichotomy.</li>
+           <li>Equal access is <span class="highlight">mandated</span> by law in many countries.</li>
+         </ul>
+       </div>
+       <!-- Privacy Concerns Card -->
+       <div class="card">
+         <img src="privacy_concerns.jpg" alt="Privacy Concerns" />
+         <h3>Privacy Concerns</h3>
+         <ul>
+           <li>CAPTCHAs can track user behavior across sites.</li>
+           <li>Data may be used for <span class="highlight">marketing</span> purposes.</li>
+           <li>Potential violations of privacy regulations (e.g., GDPR).</li>
+           <li>Users are often unaware of full tracking scope.</li>
+         </ul>
+       </div>
+     </div>
+     
+     <div class="card-grid">
+       <!-- User Experience Impact Card -->
+       <div class="card">
+         <img src="user_experience.jpg" alt="User Experience Impact" />
+         <h3>User Experience Impact</h3>
+         <ul>
+           <li>Increases form abandonment rates by <span class="highlight">30–40%</span>.</li>
+           <li>Creates frustration for all users.</li>
+           <li>Adds extra time to complete tasks.</li>
+           <li>Mobile users are disproportionately affected.</li>
+         </ul>
+       </div>
+       <!-- Global Accessibility Card -->
+       <div class="card">
+         <img src="global_accessibility.jpg" alt="Global Accessibility" />
+         <h3>Global Accessibility</h3>
+         <ul>
+           <li>Language-specific challenges exclude non-native speakers.</li>
+           <li>Cultural references may not translate globally.</li>
+           <li>Assumes Western literacy and cognitive norms.</li>
+           <li>Disadvantages users in regions with limited bandwidth.</li>
+         </ul>
+       </div>
+     </div>
+     
+     <!-- Statistical Insights -->
+     <div class="card-grid1">
+       <div class="card">
+          <h3><span class="highlight1">~1 Billion</span></h3>
+         <p>Global users with disabilities affected by inaccessible CAPTCHAs.</p>
+       </div>
+       <div class="card">
+        <h3><span class="highlight1">~$1 Trillion</span></h3>
+         <p>Estimated value of data collected by reCAPTCHA (2010–2023).</p>
+       </div>
+       <div class="card">
+        <h3><span class="highlight1">~819 Million</span></h3>
+         <p>Hours spent by users solving CAPTCHAs globally.</p>
+       </div>
+       <div class="card">
+        <h3><span class="highlight1">~40%</span></h3>
+         <p>Average form abandonment rate due to CAPTCHAs.</p>
+       </div>
+     </div>
+     <p style="font-size: 1.4rem; color: #555; text-align: center;">
+       Sources: UCIrvine reCAPTCHA: 819 Million Hours of Wasted Human Time and Billions of Dollars in Google Profits, Community Tech Network: Digital Disability Inclusion, Cornell University Study: Dazed & Confused: A Large-Scale Real-World User Study of reCAPTCHAv2,  CAPTCHA Impact on User Experience study, Web Accessibility Initiative (WAI), University of Maryland HCI Lab, Wpforms blog
+     </p>
+   </section>
+
