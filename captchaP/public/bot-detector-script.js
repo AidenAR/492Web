@@ -5,8 +5,9 @@ function detectBot() {
         noLanguages: (navigator.languages?.length || 0) === 0,
         inconsistentEval: detectInconsistentEval(),
         domManipulation: document.documentElement
-        .getAttributeNames()
-        .some((attr) => ["selenium", "webdriver", "driver"].includes(attr)),
+            .getAttributeNames()
+            .some((attr) => ["selenium", "webdriver", "driver"].includes(attr)),
+        quickScroll: detectQuickScroll(),
     };
   
     let verdict = false;        // default verdict
@@ -40,6 +41,16 @@ function detectInconsistentEval() {
             (length === 39 && !["internet_explorer"].includes(browser)));
 }
 
+// quick scroll detection
+let scrollEvents = 0;
+document.addEventListener("scroll", () => (scrollEvents += 1));
+
+function detectQuickScroll() {
+    return (scrollEvents > 1) ? true : false;
+}
+
 // display the results
-const verdict = detectBot();
-document.getElementById("result").innerHTML = verdict ? "Bot Detected 🤖" : "Human User Detected 😃";
+setTimeout('const verdict = detectBot();', 300);
+setTimeout('document.getElementById("result").innerHTML = verdict ? "Bot Detected" : "Human Detected";', 350);
+setTimeout('document.getElementById("resultImage").src = verdict ? "Robot.jpeg" : "smiley-face.jpeg";', 350);
+setTimeout('document.getElementById("resultImage").alt = verdict ? "Robot" : "Smiley Face";', 350);
