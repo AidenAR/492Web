@@ -627,10 +627,9 @@
 
   <section>
     <h2>This Website's Built-In Bot Detection</h2>
+    
     <div>
-      <h3 id="result" style="text-align:center"></h3>
-      <img id="resultImage" style="max-width: 40%; height: auto; border-radius: 30px; display: block;
-      margin-left: auto; margin-right: auto;">
+      <img id="resultImage" style="max-width: 100%; height: auto; border-radius: 30px;">
     </div>
     <div>
       <p>
@@ -725,7 +724,7 @@
       <code>
         export default async ({ page }: { page: Page }) => { await page.goto('https://google.com/'); }
       </code> -->
-      <img src="Browserless Debugger.png" style="max-width: 100%; height: auto; border-radius: 15px; margin-top:20px;">
+      <img src="Browserless Debugger.png" alt="Bot Detected Screenshot" style="max-width: 100%; height: auto; border-radius: 15px; margin-top:20px;">
 
     </div>
   
@@ -767,23 +766,35 @@
       <li>
         <b>Follow <a href="https://www.w3.org/TR/WCAG22/" target="_blank">WCAG 2.2</a> guidlines.</b> They are the most up-to-date version 
         of guiding principles for accessible website design by W3C. According these guidelines, websites should be:
-        <ul>
-          <li style="margin-bottom:10px; margin-top:10px;">
-            <b>Perceivable.</b> This includes text-based alternatives for visual content, closed-captioning for audio-visual media, and the 
-            use of colour so as to make website elements distinguishable from one another, among others.
-          </li>
-          <li style="margin-bottom:10px;">
-            <b>Operable.</b> This includes being keyboard accessible with shortcuts, limiting interruptions and timeouts, and supporting 
-            various input modalities, among others.
-          </li>
-          <li style="margin-bottom:10px;">
-            <b>Understandable.</b> This includes ensuring content is readable, predictable, and giving users the opportunity to correct 
-            mistakes, among others.
-          </li>
-          <li style="margin-bottom:10px;">
-            <b>Robust.</b> This includes being compatible with various operating systems, browsers, and assistive technologies, among others.
-          </li>
-        </ul>
+
+        <div class="card-grid1" style="text-align:center; margin-top:20px; margin-bottom:20px;">
+          <div class="card">
+            <h3 class="highlight">Perceivable</h3>
+            <p>
+              This includes text-based alternatives for visual content and closed-captioning for audio-visual media, among others.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="highlight">Operable</h3>
+            <p>
+              This includes being keyboard accessible with shortcuts, limiting interruptions and timeouts, and supporting 
+              various input modalities, among others.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="highlight">Understandable</h3>
+            <p>
+              This includes ensuring content is readable, predictable, and giving users the opportunity to correct 
+              mistakes, among others.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="highlight">Robust</h3>
+            <p>
+              This includes being compatible with various operating systems, browsers, and assistive technologies, among others.
+            </p>
+          </div>
+        </div>
         With these principles in mind, your website is sure to be more accessible to everyone, regardless of ability.
       </li>
       
@@ -794,10 +805,11 @@
         and point them towards resources that will help them help others.
       </li>
     </ol>
+    <img src="onlyyou.png" alt="Only You Can Promote Accessibility" style="max-width: 100%; height: auto; border-radius: 20px">
   </section>
 
   <footer>
-    &copy; 2025 Reimagining CAPTCHAs Project
+    &copy; Created by Ananya Ohrie, Krishna Joshi, Phillip Carson, & Aiden Ramgoolam
   </footer>
 </body>
 </html>
