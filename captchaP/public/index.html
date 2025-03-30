@@ -398,76 +398,109 @@
 
   <section>
     <h2>Professor Interviews and Key Insights</h2>
+    <p>We met with and interviewed two professors at the University of Waterloo to learn their opinions on CAPTCHAs, their future with AI, and how accessability plays a role in everything.</p>
+    <div class="highlight-box">
+      <p>DISCLAIMER: The written answers displayed are not completely direct quotes. All information and thoughts are from the respective Professors. However, aspects such as wording have been modified to ensure a better flow and user experience when reading.</p>
+    </div>
+    <div class="highlight-box" style="background-color: #c4ffe9; border-left: 4px solid #0f774c;">
+      <p>AKNOWLEDGEMENT: We would like to extend our deepest gratitude to Professor Urs Hengartner and Professor Jeff Avery for providing their valubale insights!</p>
+    </div>
     <div style="display: flex; flex-direction: row; justify-content: space-between;">
-    <img src="prof-one.avif" style="max-width: 25%;">
-    <div style="background-color: #012c5a;">
-      <p style="margin: 0px; margin-left: 15px; color: #eef9ff;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam massa nunc, porta ut pulvinar nec, aliquam ut ipsum. Donec vel diam nec tortor gravida imperdiet et in urna. Donec vitae porttitor ipsum, nec consectetur augue. Sed eu tellus in dui efficitur. </p>
+      <img src="prof-one.avif" style="max-width: 25%;">
+      <div style="background-color: #012c5a; padding: 30px; display: flex; flex-direction: column; justify-content: center;">
+        <h3 style="color: #eef9ff; margin-top: 0px">Meet Professor Urs Hengartner!</h3>
+        <p style="margin: 0px; margin-left: 15px; color: #eef9ff;"> Professor Urs Hengartner is an associate professor at the University of Waterloo. He teches many classes related to Computer Security and Privacy as well as User Authentication, which is also where his interests in research lay. This includes "authenticating users based on their behavioural or physiological biometrics." He also recieved his M.S. and Ph.D in Computer Science from Carnegie Mellon. <br> Fun Fact: He attend grad school with the creator of CAPTCHAs and CEO of Duolingo, Luis von Ahn.</p>
+        <p style="margin: 0px; margin-left: 15px; color: #eef9ff;">Read more about Professor Hengartner <a href="https://cs.uwaterloo.ca/~uhengart/" style="color: #eef9ff;">here!</a></p>
+      </div>
+     </div>
+
+  <div class="card-grid" style="grid-template-columns: repeat(2, 1fr); margin-top: 20px;">
+    <div class="card">
+      <div style="display: flex; flex-direction: row; justify-content: space-between; padding: 10px;">
+      <h3 style="padding: 15px; padding-top: 0px; margin-top: 0px; min-height: 130px;">Why is distinguishing between humans and bots important?</h3>
+      <img src="image.png" style="max-width: 100px; max-height: 100px;" >
+    </div>
+      <p style="margin: 0px; margin-left: 15px;">It’s important because websites care about the security aspect. Bots sometimes create and download websites. For example, there may be a news website with text, and the bot could download the news and republish it. This is something that we want to avoid. There may also be a bot that tries to break through a login page by trying all the passwords, which can potentially be detected through a CAPTCHA. This is the key reason: trying to avoid and stop bots from entering. However, the thing to keep in mind is that CAPTCHAs are not a very good security mechanism as they can be broken by any human. You want to have other security mechanisms in place to protect information.</p>
+    </div>
+    <div class="card">
+      <div style="display: flex; flex-direction: row; justify-content: space-between; padding: 10px;">
+      <h3 style="padding: 15px; padding-top: 0px; margin-top: 0px; min-height: 130px;">How does the advancement in AI impact the future?</h3>
+      <img src="image.png" style="max-width: 100px; max-height: 100px;" >  
+    </div>
+      <p style="margin: 0px; margin-left: 15px;">The future opens doors to behaviour-based authentication, which means that somebody is authenticated by their behaviour. This can include things like how they move their move or how they swipe their phone, as people have different behaviour. AI could potentially detect these differences. This is good and bad in terms of security as we can use AI to better protect passwords. One way to use this is, in addition to entering a password, there can be a program detecting mouse behaviour as a backup security mechanism. If it seems off from usual mouse movement behaviour, then it’s flagged and 2 factor authentication can be used further. This was “the good” regarding AI, but AI could also contribute to breaking security mechanisms as a bot can also potentially behave like a human, so it’s a double edged sword.</p>
+    </div>
+    <div class="card">
+      <div  style="display: flex; flex-direction: row; justify-content: space-between; padding: 10px;">
+      <h3 style="padding: 15px; padding-top: 0px; margin-top: 0px; min-height: 130px;">Are CAPTCHAs a long-term solution to bot detection?</h3>
+      <img src="image.png" style="max-width: 100px; max-height: 100px;" > 
+    </div>
+      <p style="margin: 0px; margin-left: 15px;">CAPTCHAs were invented in the early 2000s and have been here since then. It's hard to say about the future long term as AI is getting stronger. Most CAPTCHAs these days involve identifying images like bikes, boats, etc. However, Cloudflare has developed a turnstile system that collects data about you while you're browsing, including what websites you visit. By having all of this data, they can see that you're a real person and not a bot. This is a potential replacement.</p>
+    </div>
+    <div class="card">
+      <div style="display: flex; flex-direction: row; justify-content: space-between; padding: 10px;">
+
+      <h3 style="padding: 15px; padding-top: 0px; margin-top: 0px; min-height: 130px;">Are there any privacy with the new technologies?</h3>
+      <img src="image.png" style="max-width: 100px; max-height: 100px;" >  
+    </div>
+      <p style="margin: 0px; margin-left: 15px;">Yes, absolutely, there are! It's concerning because Cloudflare, for example, is behind many websites. They collect so much data in the background about your behaviour to ensure your human. This means that now they have all this data and we don't know what they're doing with it, which is concerning.</p>
+    </div>
+  </div>
+  
+ <div style="display: flex; flex-direction: row; justify-content: space-between;">
+    <img src="prof.png" style="max-width: 25%;">
+    <div style="background-color: #012c5a; padding: 30px; display: flex; flex-direction: column; justify-content: center;">
+      <h3 style="color: #eef9ff; margin-top: 0px">Meet Professor Jeff Avery!</h3>
+      <p style="margin: 0px; margin-left: 15px; color: #eef9ff;"> Professor Jeff Avery is an associate professor at the University of Waterloo. He teches many classes related to Human Computer Interaction and Software Engineering, which is also where his interests in research lay. This includes software architecture/design, input and interection technologies, and optimization. Professor Avery is also an undergraduate academic advisor.</p>
+      <p style="margin: 0px; margin-left: 15px; color: #eef9ff;">Read more about Professor Avery <a href="https://cs.uwaterloo.ca/~j2avery/" style="color: #eef9ff;">here!</a></p>
     </div>
    </div>
-   <div style="margin-top: 10px; margin-bottom: 0px;">
-    <h3>Why is distinguishing between humans and bots important?</h3>
-    <p>Websites care about the security asepect. Bots sometimes create and download websites. For example, there may be a news website with text, and the bot could download the news and republish it, which is something that we want to avoid. There may also be a bot that tries to break through a login page by trying all the passwords, which can potentially be detected through a captcha. These are key reasons: trying to avoid and stop bots from entering. You want to make sure the user is a human and not a bot. However, the thing to keep in mind is that captchas are not a very good security mechanism as they can be broken by any human. You want to have other security mechanisms in place to protect information. </p>
-  </div>
-  <div style="margin-top: 30px;">
-    <div style="background-color: #9db3ca; display: flex; flex-direction: row; justify-content: space-between; padding: 10px;">
-    <h3 style="padding: 15px; ">How does the advancement in AI impact the future of Captchas?</h3>
-    <img src="image.png" style="max-width: 10%;" >
-  </div>
-    <div style="padding-left: 15px; padding-right: 15px;">
-    <p style="margin: 0px; margin-top: 20px;">I'm interested in behaviour-based authentication. Somebody is authenticated by their behaviour. This can include things like how they move their move or how swipe their phone as people have different behaviour. AI could potentially detect these differences. This is good and bad in terms of security as we can use AI to better protect password. One way to use this is in addition to entering a password, there’s a program detecting mouse behaviour as a backup security mechanism. If it seems off from usual mouse movement behaviour, then it’s flagged and 2 factor authentication can be used. This was the good but AI could also contribute to breaking security mechanisms as a bot can also potentially behave like a human, so it’s a double edged sword. </p>
-  </div>
-  <div style="margin-top: 30px;">
-    <div style="background-color: #9db3ca; display: flex; flex-direction: row; justify-content: space-between; padding: 10px;">
-    <h3 style="padding: 15px; ">Are CAPTCHAs a long-term solution to bot detection?</h3>
-    <img src="image.png" style="max-width: 10%;" >
-  </div>
-    <div style="padding-left: 15px; padding-right: 15px;">
-    <p style="margin: 0px; margin-top: 20px;">Captchas were invented in early 2000s and have been here since then. It's hard to say about the future as AI is getting stronger. Most captchas these days invlove identifying images like bikes. Cloudflare has developed a turn style software that collects data about you while you're browing. Having all this data data, they can see that you're a real person and not a bot. This is a potential replacement, its concerning because cloudflare is a part of many websites and now they have all this data. We dont know what they're doing with it which is concerning. </p>
-  </div>
-  
-  <div style="display: flex; flex-direction: row; justify-content: space-between;">
-    <img src="prof-one.avif" style="max-width: 25%;">
-    <div style="background-color: #012c5a;">
-      <p style="margin: 0px; margin-left: 15px; color: #eef9ff;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam massa nunc, porta ut pulvinar nec, aliquam ut ipsum. Donec vel diam nec tortor gravida imperdiet et in urna. Donec vitae porttitor ipsum, nec consectetur augue. Sed eu tellus in dui efficitur. </p>
+
+   <div class="card-grid" style="grid-template-columns: repeat(2, 1fr); margin-top: 20px;">
+      <div class="card">
+        <div  style="display: flex; flex-direction: row; justify-content: space-between; padding: 10px;">
+
+        <h3 style="padding: 15px; padding-top: 0px; margin-top: 0px;">Is “complete accessibility” possible in technology and CAPTCHAs?</h3>
+        <img src="image.png" style="max-width: 100px; max-height: 100px;" > 
+         </div>
+        <p style="margin: 0px; margin-left: 15px;">You can’t make CAPTCHAs fully accessible, although attempts and progress has been made. The original CAPTCHA was “type in the letters from the blurry image”, impossible for screen readers. New versions like reCAPTCHA v2/v3 are attempts to work around it, with audio in v2 circa 2014. It should be possible to detect whether a screen reader was being used and switch to an audio message, but they were clunky and not easy to use. Disabilities are a broad spectrum of capabilities, there’s likely never going to be a single input that works for everyone. Also, there doesn’t exist a system for “telling the system” what their abilities are.</p>
+      </div>
+      <div class="card">
+        <div  style="display: flex; flex-direction: row; justify-content: space-between; padding: 10px;">
+
+        <h3 style="padding: 15px; padding-top: 0px; margin-top: 0px;">Why don’t companies use more accessible designing? What can we do about this?</h3>
+        <img src="image.png" style="max-width: 100px; max-height: 100px;" > 
     </div>
+        <p style="margin: 0px; margin-left: 15px;">It’s a numbers game, companies don’t design for accessibility due to profits - biggest bang for the buck is catering to computer-literate customers that don’t have impairments. The industry has tried to impose ethics, but profit motives are stronger than ethical ones. We need more legislation to enforce ideas, accessible rights need to be concrete human rights (not being able to control bot traffic isn’t an excuse for inaccessible design). Right now, accessibility legislation is done country-by-country, a global effort would be great, but it’s not seen in the same light as, for example, a widespread medical problem. It’s not likely that every country will agree to a standardized system.</p>
+      </div>
+      <div class="card">
+        <div  style="display: flex; flex-direction: row; justify-content: space-between; padding: 10px;">
+
+        <h3 style="padding: 15px; padding-top: 0px; margin-top: 0px;">How will AI impact designing for accessibility and the future of CAPTCHAs?</h3>
+        <img src="image.png" style="max-width: 100px; max-height: 100px;" > 
+    </div>
+        <p style="margin: 0px; margin-left: 15px;">AI in the form of ChatGPT or other LLMs may not be ideal from an accessibility lens since a lot of feedback and prompting is needed for tailored outputs. We need better interaction/feedback models. This problem will likely be resolved (soon), but it’s largely just another interface that we need to deal with. Better way forward is background processes, but there are concerns with false positives. This may not work for everyone (e.g. a special mouse might mess with the system), models are trained against “regular” human behaviour.</p>
+      </div>
+      <div class="card">
+        <div  style="display: flex; flex-direction: row; justify-content: space-between; padding: 10px;">
+
+        <h3 style="padding: 15px; padding-top: 0px; margin-top: 0px;">What are your thoughts on designing and testing for accessibility?</h3>
+        <img src="image.png" style="max-width: 100px; max-height: 100px;" > 
+    </div>
+        <p style="margin: 0px; margin-left: 15px;">Traditionally, this is a hard problem to solve. When designing for accessibility, recognize that there is no one general solution (generally, you need many different solutions or a combination thereof). Testing systems must be done with real people that have the disabilities, but they may be difficult to reach in adequate numbers. The model of “put up a poster” is likely not enough for the real world. This is a big reason for the lack of accessibility research, it isn’t a “low hanging fruit”. For a solution to be reasonable, it has to capture a full range of physical abilities. For example, different mouse configurations and motor impairments are especially problematic. Cognitive impairments (even from aging) must also be considered (e.g. double clicking when only a single click was required).</p>
+      </div>
+
    </div>
-   <div style="margin-top: 20px; margin-bottom: 20px;">
-    <div style="background-color: #9db3ca; display: flex; flex-direction: row; justify-content: space-between; padding: 10px;">
-    <h3 style="padding: 15px; ">Is “complete accessibility” possible in technology and Captchas?</h3>
-    <img src="image.png" style="max-width: 10%;">
-  </div>
-    <div style="padding-right: 15px; padding-left: 15px;">
-    <p style="margin: 0px; margin-top: 20px;">Websites care about the security asepect. Bots sometimes create and download websites. For example, there may be a news website with text, and the bot could download the news and republish it, which is something that we want to avoid. There may also be a bot that tries to break through a login page by trying all the passwords, which can potentially be detected through a captcha. These are key reasons: trying to avoid and stop bots from entering. You want to make sure the user is a human and not a bot. However, the thing to keep in mind is that captchas are not a very good security mechanism as they can be broken by any human. You want to have other security mechanisms in place to protect information. </p>
-  </div>
-  <div style="margin-top: 30px;">
-    <div style="background-color: #9db3ca; display: flex; flex-direction: row; justify-content: space-between; padding: 10px;">
-    <h3 style="padding: 15px; ">Why don’t companies use more accessible designing?</h3>
-    <img src="image.png" style="max-width: 10%;" >
-  </div>
-    <div style="padding-left: 16px; padding-right: 15px;">
-    <p style="margin: 0px; margin-top: 20px;">I'm interested in behaviour-based authentication. Somebody is authenticated by their behaviour. This can include things like how they move their move or how swipe their phone as people have different behaviour. AI could potentially detect these differences. This is good and bad in terms of security as we can use AI to better protect password. One way to use this is in addition to entering a password, there’s a program detecting mouse behaviour as a backup security mechanism. If it seems off from usual mouse movement behaviour, then it’s flagged and 2 factor authentication can be used. This was the good but AI could also contribute to breaking security mechanisms as a bot can also potentially behave like a human, so it’s a double edged sword. </p>
-  </div>
-  <div style="margin-top: 30px;">
-    <div style="background-color: #9db3ca; display: flex; flex-direction: row; justify-content: space-between; padding: 10px;">
-    <h3 style="padding: 15px; ">How will AI impact designing for accessibility vs. security?</h3>
-    <img src="image.png" style="max-width: 10%;" >
-  </div>
-    <div style="padding-left: 15px; padding-right: 15px;">
-    <p style="margin: 0px; margin-top: 20px;">Captchas were invented in early 2000s and have been here since then. It's hard to say about the future as AI is getting stronger. Most captchas these days invlove identifying images like bikes. Cloudflare has developed a turn style software that collects data about you while you're browing. Having all this data data, they can see that you're a real person and not a bot. This is a potential replacement, its concerning because cloudflare is a part of many websites and now they have all this data. We dont know what they're doing with it which is concerning. </p>
-  </div>
-  
    </div>
-   <div style="margin-top: 30px;">
-    <div style="background-color: #9db3ca; display: flex; flex-direction: row; justify-content: space-between; padding: 10px;">
-    <h3 style="padding: 15px; ">What are your thoughts on designing and testing for accessibility?</h3>
-    <img src="image.png" style="max-width: 10%;" >
+   <div class="highlight-box">
+    <h3>Key Insights</h3>
+   <ol style="margin-top: 5px; margin-bottom:10px;">
+    <li> No “one size fits” all solution for accessible CAPTCHAs as there are a broad spectrum of disabilities</li>
+    <li>Companies care about profits more than designing for accessibility, catering to the mass audience, should be legislated </li>
+    <li>Hard to find test subjects which also demotivates companies</li>
+    <li>Traditional CAPTCHAs are becoming unreliable and background processes or behaviour-based authentication like Cloudflare’s Turnstile system seem to be future replacements for CAPTCHAs. However, there's many privacy concerns with data collection and there may be false positives</li>
+    <li>It's easy important to be able to distinguish between humans and bots, which makes CAPTCHA soltuions being accessible even more crucial</li>
+  </ol>
   </div>
-    <div style="padding-left: 15px; padding-right: 15px;">
-    <p style="margin: 0px; margin-top: 20px;">Captchas were invented in early 2000s and have been here since then. It's hard to say about the future as AI is getting stronger. Most captchas these days invlove identifying images like bikes. Cloudflare has developed a turn style software that collects data about you while you're browing. Having all this data data, they can see that you're a real person and not a bot. This is a potential replacement, its concerning because cloudflare is a part of many websites and now they have all this data. We dont know what they're doing with it which is concerning. </p>
-  </div>
-  
-   </div>
-    <p>Through expert interviews, we learned that CAPTCHAs are often implemented without considering accessibility or user experience. Professors emphasized the need for inclusive design and the importance of transparent data usage policies.</p>
   </section>
 
 
