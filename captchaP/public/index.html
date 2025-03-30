@@ -471,9 +471,15 @@
       As of January 2025, Cloudflare services were being used in <a href="https://backlinko.com/cloudflare-users" target="_blank">24 million</a> 
       active websites across the globe. Zooming into the 10,000 most visited websites worldwide,
     </p>
-    <h4 style="text-align:center;">over 43% utilize Cloudflare services.</h4>
+    <h2 class="highlight" style="text-align:center;">over 43% utilize Cloudflare services</h2>
+    <!-- <div class="card-grid">
+      <div class="card">
+         <h2><span class="highlight" style="text-align:center;">over 43% utilize Cloudflare services</span></h2>
+      </div>
+    </div> -->
     <p>
-      With such a prolific userbase, Cloudflare has the ability to silently gather data on virtually <i>everyone</i>. In Canada, we have 
+      With such a prolific userbase, Cloudflare has the ability to silently gather data on virtually <i>everyone</i>, ranging from sites visited and 
+      accounts created to purchasing habits. In Canada, we have 
       the <a href="https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/" target="_blank">Personal Information Protection and Electronic Documents Act</a>
       to protect us from unreasonable and non-consentual data gathering, but data privacy laws are not uniform across the globe. Further, 
       even with data privacy legislation, there is no guarantee that companies like Cloudflare will comply in totality and it can be extrodinarily
@@ -496,42 +502,61 @@
   
       </p>
       <h3>What are some indicator signs of bots?</h3>
-      <ul>
-          <li>
-              <b>Scroll behaviour analysis.</b> The background script will pick up on how quickly the user begins scrolling through the website
-              upon loading the page. Bots can load a web page and begin scrolling nearly instantly: far quicker than any human would be 
-              reasonably expected to. For demonstration purposes, if you scroll this page within 300ms of loading it, you will 
-              be flagged as a bot (in reality, this threshold would be much lower).
-          </li>
-          <li>
-              <b>The browser's <i>Navigator</i> object. </b> The <i>Navigator</i> object represents the state and identity of the user's
-              browser, such as its version, operating system, and capabilities. Some automation tools will set the <i>navigator.webdriver</i>
-              property to <i>true</i> as an indication of being controlled by an automated bot.<br> 
-          </li>
-          <li>
-              <b>The <i>Headless</i> indicator. </b> The <i>Headless</i> flag in a browser is a common indication of a user agent that is 
-              designed to scrape website data or perform other script-based activities. With these two property checks, most basic bot activity 
-              can be detected.
-          </li>
-          <li>
-              <b>Default language. </b> Browsers used by humans almost always have a set default language, which makes it simple for website 
-              content to be loaded in the user's preferred language, if available. However, bots typically do not have this property set, 
-              providing another indicator of bot activity.
-          </li>
-          <li>
-              <b>The browser's <i>eval</i> function. </b> Since bots can fake user-agent strings that the previous indicators rely on,
-              checking deeper properties of JavaScript functions can help detect inconsistencies. This website's script verifies properties 
-              like the length of the <i>eval</i> function, which should be consistent for each browser. If a a mismatch is detected, which 
-              may occur in headless or modified browsers, it suggests the environment might be automated or tampered with.
-          </li>
-          <li>
-              <b>The <i>Document Object Model</i>.</b> The DOM is a structured representation of a web page that browsers create when loading 
-              web pages. The page is organized as a tree of elements to be dynamically interacted with. Some automation tools add specific 
-              attributes to the DOM that can reveal bot activity, which this website's script can pick up on.
-          </li>
-      </ul>
-    </div>
-  
+      <div class="card-grid" style="text-align:center">
+        <div class="card">
+          <h3 class="highlight">Scroll Behaviour Analysis</h3>
+          <p>
+            The background script will pick up on how quickly the user begins scrolling through the website
+            upon loading the page. Bots can load a web page and begin scrolling nearly instantly: far quicker than any human would be 
+            reasonably expected to. For demonstration purposes of this site, if you scroll the page within <strong>300ms</strong> of loading it, you will 
+            be flagged as a bot!
+          </p>
+        </div>
+      </div>
+      <div class="card-grid" style="text-align:center">
+        <div class="card">
+          <h3 class="highlight">The <code>eval</code> Function</h3>
+          <p>
+            Since bots can fake user-agent strings that the previous indicators rely on, this website's script verifies properties 
+            like the length of the <code>eval</code> function, which should be consistent for each browser. If a a mismatch is detected, which 
+            may occur in headless or modified browsers, it suggests the environment might be automated or tampered with.
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="highlight">The Document Object Model</h3>
+          <p>
+            The DOM is a structured representation of a web page that browsers create when loading 
+            web pages. The page is organized as a tree of elements to be dynamically interacted with. Some automation tools add specific 
+            attributes to the DOM that can reveal bot activity, which this website's script can pick up on.
+          </p>
+        </div>
+      </div>
+      <div class="card-grid" style="text-align:center">
+        <div class="card">
+          <h3 class="highlight">The Navigator Object</h3>
+          <p>
+            The Navigator object represents the state and identity of the user's
+            browser, such as its version, operating system, and capabilities. Some automation tools will set the navigator.webdriver
+            property to true as an indication of being controlled by an automated bot.
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="highlight">The Headless Indicator</h3>
+          <p>
+            The Headless flag in a browser is a common indication of a user agent that is 
+            designed to scrape website data or perform other script-based activities. With these two property checks, most basic bot activity 
+            can be detected.
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="highlight">Default Language</h3>
+          <p>
+            Browsers used by humans have a set default language, which makes it simple for website 
+            content to be loaded in the user's preferred language, if available. However, bots typically do not have this property set, 
+            providing another indicator of bot activity.
+          </p>
+        </div>
+      </div>
     <div>
       <h3>Try it yourself!</h3>
       <p>
@@ -543,30 +568,42 @@
           which can emulate bot activity with a Headless browser. Replace the code with the following, then click the play button at the top-right. Wait a moment for 
           it to load, then this page will be displayed with a "Bot Detected" message!
       </p>
-      <h4>Copy-paste this code:</h4>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>Copy-paste this code into <a target="_blank" href="https://chrome.browserless.io/debugger/">Browserless Debugger</a></h3>
+          <p>
+            <code>
+              export default async ({ page }: { page: Page }) => { await page.goto('https://google.com/'); }
+            </code>
+          </p>
+        </div>
+      </div>
       <p>
-      <code>
-          export default async ({ page }: { page: Page }) => { await page.goto('https://google.com/'); }
-      </code>
+        This is what the result should look like after clicking play!
       </p>
-      <p><b>***There will be a screenshot here of what it should look like***</b></p>
+
+      <!-- <h3>Copy-paste this code:</h3>
+      <code>
+        export default async ({ page }: { page: Page }) => { await page.goto('https://google.com/'); }
+      </code> -->
+      <img src="Browserless Debugger.png" style="max-width: 100%; height: auto; border-radius: 15px; margin-top:20px;">
+
     </div>
   
     <div>
       <h3>What are some limitations to this approach?</h3>
       <p>
           Unfortunately, this website's bot detection script isn't perfect. In the grand scheme of bot detection, it has quite a narrow focus, 
-          detecting only a few indicators like navigator.webdriver and “Headless” in the user agent, which more advanced bots would be 
-          capable of bypassing. It also targets a limited number of tools, letting it work well against certain automation tools, but it may 
-          miss bots using other techniques. Further, legitimate variations in browsers can affect detection accuracy. Finally, with the 
-          constantly evolving nature of technology, both bots and browsers are always changing; continued efficacy requires consistent 
-          adaptations to new automated bot techniques.
+          detecting relatively few indicators like <code>navigator.webdriver</code> and <code>Headless</code> in the user agent, which advanced bots would be 
+          capable of bypassing. Finally, with the constantly evolving nature of technology, both bots and browsers are always changing;
+          continued efficacy requires consistent adaptations to new automated bot techniques.
       </p>
       <p>
-          Further improvements could be made by expanding the scope beyond browser-based analysis. Although more intrusive from a privacy 
-          perspective, analyzing user behaviour such as scrolling patterns, mouse movements, and speed of traversal through the site would 
-          provide additional information valuable for bot detection. However, these methods may also be more conducive to false-positives from 
-          to accessibility devices. For example, a specialized mouse or interactive device may <i>appear</i> to be bot-generated behaviour 
+          Further improvements could be made by expanding the scope beyond browser-based analysis and time before initial scroll. Although more intrusive from a privacy 
+          perspective, analyzing scrolling patterns, mouse movements, and speed of traversal through the site would 
+          provide additional information valuable for machine learning-driven bot detection. However, these methods may also be more conducive to false-positives from 
+          to accessibility devices. For example, a specialized mouse or interactive device may appear to be bot-generated behaviour 
           if it deviates from typical mouse movement patterns. It is crucial that website developers do not compromise on accessibility in
           favour of bot prevention.
       </p>
@@ -593,19 +630,19 @@
         <b>Follow <a href="https://www.w3.org/TR/WCAG22/" target="_blank">WCAG 2.2</a> guidlines.</b> They are the most up-to-date version 
         of guiding principles for accessible website design by W3C. According these guidelines, websites should be:
         <ul>
-          <li>
+          <li style="margin-bottom:10px; margin-top:10px;">
             <b>Perceivable.</b> This includes text-based alternatives for visual content, closed-captioning for audio-visual media, and the 
             use of colour so as to make website elements distinguishable from one another, among others.
           </li>
-          <li>
+          <li style="margin-bottom:10px;">
             <b>Operable.</b> This includes being keyboard accessible with shortcuts, limiting interruptions and timeouts, and supporting 
             various input modalities, among others.
           </li>
-          <li>
+          <li style="margin-bottom:10px;">
             <b>Understandable.</b> This includes ensuring content is readable, predictable, and giving users the opportunity to correct 
             mistakes, among others.
           </li>
-          <li>
+          <li style="margin-bottom:10px;">
             <b>Robust.</b> This includes being compatible with various operating systems, browsers, and assistive technologies, among others.
           </li>
         </ul>
