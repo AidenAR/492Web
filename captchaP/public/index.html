@@ -21,7 +21,7 @@
       text-align: center;
     }
     header h1 {
-      font-size: 3rem;
+      font-size: 2.4rem;
       margin: 0;
     }
     section {
@@ -36,7 +36,7 @@
     }
     h2 {
       color: #012c5a;
-      font-size: 2.5rem;
+      font-size: 2.2rem;
     }
     h3 {
       color: #012c5a;
@@ -44,13 +44,17 @@
     }
     h4 {
       color: #012c5a;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
     }
     p {
-      font-size: 1.8rem;
+      font-size: 1.3rem;
     }
     ul {
       margin-left: 2rem;
+      font-size: 1.3rem;
+    }
+    li {
+      font-size: 1.3rem;
     }
     .card-grid {
       display: grid;
@@ -136,7 +140,7 @@
 </head>
 <body>
   <header>
-    <h1>Reimagining CAPTCHAs – A Continuous Scroll Journey</h1>
+    <h1>Reimagining CAPTCHAs</h1>
   </header>
   
   <!-- Cartoon Image Embedded at the Top -->
@@ -144,7 +148,7 @@
   
   <!-- Introduction -->
   <section>
-    <h2>Why CAPTCHAs Exist in the First Place</h2>
+    <h2>Why do CAPTCHAs Exist?</h2>
     <p>
       CAPTCHAs (Completely Automated Public Turing test to tell Computers and Humans Apart) were created to protect websites from bots by verifying that the user is a real human. They serve as gatekeepers to prevent spam, abuse, and automated attacks.
     </p>
@@ -167,6 +171,11 @@
     <p>
       CAPTCHAs are everywhere—but traditional implementations often impose significant challenges for individuals with disabilities. It’s <span class="highlight">crucial</span> that everyone can navigate the digital world without barriers.
     </p>
+  </section>
+
+  <section>
+    <h2>Paid CAPTCHA Solvers</h2>
+    <p>Some services pay humans minimal wages to solve CAPTCHAs, essentially turning them into a mechanical task rather than a security measure. This practice defeats the original purpose of CAPTCHAs entirely.</p>
   </section>
   
   <!-- Key Aspects / Features Section -->
@@ -273,7 +282,7 @@
         </p>
       </div>
     </div>
-    <p style="font-size: 1.4rem; color: #555; text-align: center;">
+    <p style="font-size: 1rem; color: #555; text-align: center;">
       Sources: Stanford How Good are Humans at Solving CAPTCHAs?; A study on Accessibility of Google ReCAPTCHA Systems (Gaggi, 2022); CAPTCHA: Impact on User Experience of Users with Learning Disabilities (Ruti Gafni and Idan Nagar)
     </p>
   </section>
@@ -283,24 +292,24 @@
     <h2>Summary Metrics</h2>
     <table>
       <tr>
-        <th>Metric</th>
-        <th>General Users</th>
-        <th>Users with Disabilities</th>
+        <th><h4>Metric</h4></th>
+        <th><h4>General Users</h4></th>
+        <th><h4>Users with Disabilities</h4></th>
       </tr>
       <tr>
-        <td>Average Time per CAPTCHA</td>
-        <td>~32 seconds</td>
-        <td>Longer (varies)</td>
+        <td><p>Average Time per CAPTCHA</p></td>
+        <td><p>~32 seconds</p></td>
+        <td><p>Longer (varies)</p></td>
       </tr>
       <tr>
-        <td>Visual CAPTCHA Success Rate</td>
-        <td>~90%+</td>
-        <td>Lower if motor tasks are required</td>
+        <td><p>Visual CAPTCHA Success Rate</p></td>
+        <td><p>~90%+</p></td>
+        <td><p>Lower if motor tasks are required</p></td>
       </tr>
       <tr>
-        <td>Audio CAPTCHA Success Rate</td>
-        <td>~50%</td>
-        <td>~46%</td>
+        <td><p>Audio CAPTCHA Success Rate</p></td>
+        <td><p>~50%</p></td>
+        <td><p>~46%</p></td>
       </tr>
     </table>
   </section>
@@ -376,23 +385,9 @@
         <p>Average form abandonment rate due to CAPTCHAs.</p>
       </div>
     </div>
-    <p style="font-size: 1.4rem; color: #555; text-align: center;">
+    <p style="font-size: 1rem; color: #555; text-align: center;">
       Sources: UCIrvine reCAPTCHA; Community Tech Network; Cornell University Study; CAPTCHA Impact on User Experience study; Web Accessibility Initiative (WAI); University of Maryland HCI Lab; Wpforms blog.
     </p>
-  </section>
-
-
- 
-
-
-  <section>
-    <h2>Stanford Image Recognition Example</h2>
-    <p>Stanford's AI models have shown they can solve image-based CAPTCHAs more accurately than humans, highlighting the limitations of these systems in keeping up with technological advancements.</p>
-  </section>
-
-  <section>
-    <h2>Paid CAPTCHA Solvers</h2>
-    <p>Some services pay humans minimal wages to solve CAPTCHAs, essentially turning them into a mechanical task rather than a security measure. This practice defeats the original purpose of CAPTCHAs entirely.</p>
   </section>
 
   <section>
@@ -401,7 +396,17 @@
   </section>
 
   <section>
-    <h2>Theory-Crafted CAPTCHA Alternatives</h2>
+    <h2>Attempt 1: Redesign of Existing CAPTCHAs</h2>
+    <p>xxx</p>
+  </section>
+
+  <section>
+    <h2>Cornell Image Recognition Study</h2>
+    <p>Cornells's AI models have shown they can solve image-based CAPTCHAs more accurately than humans, highlighting the limitations of these systems in keeping up with technological advancements.</p>
+  </section>
+
+  <section>
+    <h2>Attempt 2: Theory-Crafted CAPTCHA Alternatives</h2>
     <p>We explored new CAPTCHA models such as gesture-based authentication, behavioral tracking, and user personalization. These alternatives aim to be more user-friendly, but none are without flaws, especially regarding privacy and edge-case handling.</p>
   </section>
 
@@ -509,9 +514,11 @@
           it to load, then this page will be displayed with a "Bot Detected" message!
       </p>
       <h4>Copy-paste this code:</h4>
+      <p>
       <code>
           export default async ({ page }: { page: Page }) => { await page.goto('https://google.com/'); }
       </code>
+      </p>
       <p><b>***There will be a screenshot here of what it should look like***</b></p>
     </div>
   
@@ -550,6 +557,7 @@
         altogether. For example, restricting the privileges of new user accounts until they reach a certain age can mitigate the risk of 
         spam content on your site, without the need for explicit bot detection.
       </li>
+      <br>
       
       <li>
         <b>Follow <a href="https://www.w3.org/TR/WCAG22/" target="_blank">WCAG 2.2</a> guidlines.</b> They are the most up-to-date version 
@@ -574,6 +582,7 @@
         With these principles in mind, your website is sure to be more accessible to everyone, regardless of ability.
       </li>
       
+      <br>
       <li>
         <b>Spread the word!</b> The world of accessibility on the web is vast and of critical importance, but unfortunately, it isn't 
         talked about nearly enough. When developing websites and tools in teams with others, inform them of accessibility best-practices 
