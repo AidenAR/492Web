@@ -51,6 +51,5 @@ function detectQuickScroll() {
 
 // display the results
 setTimeout('const verdict = detectBot();', 300);
-setTimeout('document.getElementById("result").innerHTML = verdict ? "Bot Detected" : "Human Detected";', 350);
-setTimeout('document.getElementById("resultImage").src = verdict ? "Robot.jpeg" : "smiley-face.jpeg";', 350);
+setTimeout('document.getElementById("resultImage").src = verdict ? "RobotNew.png" : "SmileyNew.png";', 350);
 setTimeout('document.getElementById("resultImage").alt = verdict ? "Robot" : "Smiley Face";', 350);
