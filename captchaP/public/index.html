@@ -8,10 +8,10 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
+      font-family: "Arial", sans-serif;
       font-size: 1.6rem;
-      background-color: #f5f5f5;
-      color: #333;
+      background-color: #ffffff;
+      color: #000000;
       line-height: 1.6;
     }
     header {
@@ -21,7 +21,8 @@
       text-align: center;
     }
     header h1 {
-      font-size: 2rem;
+      font-size: 1.9rem;
+      font-family: "Georgia", serif;
       margin: 0;
     }
     section {
@@ -36,25 +37,28 @@
     }
     h2 {
       color: #012c5a;
-      font-size: 1.8rem;
+      font-family: "Georgia", serif;
+      font-size: 1.7rem;
     }
     h3 {
       color: #012c5a;
-      font-size: 1.6rem;
+      font-family: "Georgia", serif;
+      font-size: 1.5rem;
     }
     h4 {
       color: #012c5a;
-      font-size: 1.4rem;
+      font-family: "Georgia", serif;
+      font-size: 1.3rem;
     }
     p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
     ul {
       margin-left: 2rem;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
     li {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
     .card-grid {
       display: grid;
@@ -116,7 +120,7 @@
     }
     /* New Summary Metrics Section styling */
     .summary-metrics {
-      background-color: #eef9ff;
+      background-color: #ffffff;
       padding: 2rem;
       border-radius: 8px;
       margin-bottom: 2rem;
@@ -128,9 +132,9 @@
     }
     .summary-metrics th, .summary-metrics td {
       border: 1px solid #ccc;
-      padding: 0.7rem;
+      padding: 0.6rem;
       text-align: left;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
     .summary-metrics th {
       background-color: #dbe9f4;
@@ -166,8 +170,10 @@
     <p>
       Developed in the early 2000s, CAPTCHAs have transformed significantly. However, this evolution has often compromised accessibility for users with disabilities. Our project delves into these challenges and explores innovative solutions that balance robust security with improved accessibility.
     </p>
-    
-    <h3>Why This Matters</h3>
+  </section>
+
+  <section>
+    <h2>Why This Matters</h2>
     <p>
       CAPTCHAs are everywhere—but traditional implementations often impose significant challenges for individuals with disabilities. It’s <span class="highlight">crucial</span> that everyone can navigate the digital world without barriers.
     </p>
@@ -395,10 +401,65 @@
     <p>Through expert interviews, we learned that CAPTCHAs are often implemented without considering accessibility or user experience. Professors emphasized the need for inclusive design and the importance of transparent data usage policies.</p>
   </section>
 
-  <section>
+
+  <section class="summary-metrics">
     <h2>Attempt 1: Redesign of Existing CAPTCHAs</h2>
-    <p>xxx</p>
-  </section>
+    <p>To make CAPTCHAs more accessible, we first attempted to redesign existing ones, specifically the text-based CAPTCHAs. </p>
+    <p>Our approach was the following:
+      <ol>
+      <li><b>Test a traditionally difficult or inaccessible example of the CAPTCHA with a large language model (LLM) like ChatGPT or Gemini to see if it can solve it. </b>
+        This will be used as a benchmark to compare to the redesigned version.</li>
+      <li><b>Determine the accessibility challenge that the CAPTCHA poses. </b></li>
+      <li><b>Attempt to address the accessiblity challenge.</b></li>
+      <li><b>Test the redesign with the same LLM to test our hypothesis.</b></li>
+      </ol>
+
+      <h3>Text-Based CAPTCHAs</h3>
+      <p>The following was tested with the Google Gemini 2.0 Flash LLM model on March 30th, 2025. 
+        The prompt we used was posing as an elderly woman who is trying to log into her bank account to urgently withdraw money. This creates a scenario for the LLM to 
+        place themselves in and creates a sense of pressure to get the CAPTCHA text correct.
+      </p>
+      <table>
+        <tr>
+          <th>Stage</th>
+          <th>Prompt & Response</th>
+          <th>Result</th>
+        </tr>
+        <tr>
+          <td>Before Redesign</td>
+          <td><img src="Text Captcha Before.png" style="max-width: 95%;"><br>
+          <b>Actual:</b> Poq93nmLq<br>
+          <b>Guess: </b> Pn9q3mL9<br>
+          <b>Differences: </b> 
+          <li>Mixed up the characters 9 and q</li>
+          <li>The character o was cut off so it perceived it as an n</li>
+          <li>Missed the letter n</li>
+          <b>Accessibility Challenges:</b>
+          <li>Characters are cut off, slanted, or overlap with other characters</li>
+          <li>Some characters look like others, making it difficult to decipher which is which - ex. letter "o" (o) and number "zero" (0)</li>
+          <li>Distracting background</li>
+          <li>Lack of contrast between text and background</li>
+          <li>Incompatible with screen readers which are used by individuals who have low visibility or are blind</li></td>
+          <td>Incorrect<br>
+          </td>
+        </tr>
+        <tr>
+          <td>After Redesign</td>
+          <td><img src="Text After Redesign.png" style="max-width: 95%;"><br>
+            <b>Actual:</b> S78jkHRx<br>
+            <b>Guess: </b> S78jkHRx<br>
+            <b>Differences: </b> None
+            <br><b>Accessibility Fixes:</b>
+            <li>Straight and plain text</li>
+            <li>Characters are unique and are more difficult to mistake with others</li>
+            <li>Plain background</li>
+            <li>High contrast between black text and white background</li>
+            <li>More compatible with screen readers</li>
+          <td>Correct</td>
+        </tr>
+      </table>
+      
+      </section>
 
   <section>
     <h2>Cornell's Study & Evaluation of Modern CAPTCHAs</h2>
@@ -407,7 +468,7 @@
       <img src="research-papers-1400x700.png" style="max-width: 45%">
     </div>
     <h3><b> <a href="https://arxiv.org/pdf/2307.12108" style="text-decoration: none;">Overview of Study: </a></b></h3>
-    <p > 
+    <p> 
       <strong>Participants: </strong> 1000-1400 People<br>
       <strong> Purpose: </strong> To observe captcha solve time, user preference regading capcthas, accuracy rate in solving captchas, and whether factors such as demographics and experimental context affects solve time. <br>
       <strong>Example Experiment Task: </strong> Each participant asked to solve 10 captchas each. <br>
@@ -431,13 +492,21 @@
      </div>
      <h3><b>Result Conclusions and Implications: </b></h3>
      <div class="highlight-box">
-      <p>The difference in accuracy of solving captchas between humans and bots is already very high. This means that if we make captchas simpler to solve for humans in attempts to make them more accessible, they would get even easier for bots to get past. This highlights the limitations of the traditional captchas in keeping up with modern day technology, and further supports the argument that captcha options may need to be redesigned entirely to ensure acessability. Reworking old options would not be sufficient as it's time for the industry and for companies to look towards completly new solutions.</p>
+      <p>The difference in accuracy of solving CAPTCHAs between humans and bots is already very high. This means that if we make captchas simpler to solve for humans in attempts to make them more accessible, they become even easier for bots to bypass. This highlights the 
+        limitations of the traditional CAPTCHAs in keeping up with modern day technology, and further supports the argument that CAPTCHA options may need to be redesigned entirely to ensure acessability. Reworking old options would not be sufficient as it's time for the industry and for companies to look towards completely new solutions.</p>
     </div>
   </section>
 
   <section>
     <h2>Attempt 2: Theory-Crafted CAPTCHA Alternatives</h2>
-    <p>We explored new CAPTCHA models such as gesture-based authentication, behavioral tracking, and user personalization. These alternatives aim to be more user-friendly, but none are without flaws, especially regarding privacy and edge-case handling.</p>
+    <p>As a result of initial redesign and Cornell's Study of Modern CAPTCHAs, we are now creating new CAPTCHAs such as gesture-based authentication, behavioral tracking, and user personalization. These alternatives aim to be more user-friendly, but none are without flaws, especially regarding privacy and edge-case handling.</p>
+  
+    <p>Are you smarter than AI?</p>
+    <p>By now we know that AI is better than humans, right? So, what if we used that to our advantage?</p>
+    <p>Solve Complex Mathematical Equations Instantly – AI can compute large numerical operations, solve differential equations, and perform matrix calculations in milliseconds.</p>
+  
+
+    <p></p>
   </section>
 
   <section>
