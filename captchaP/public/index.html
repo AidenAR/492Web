@@ -180,9 +180,12 @@
       CAPTCHAs are everywhere—but traditional implementations often impose significant challenges for individuals with disabilities. It’s <span class="highlight">crucial</span> that everyone can navigate the digital world without barriers. </p>
     <p>Furthermore, it is extremely disgusting to see how some companies like 2Captcha are profiting off of user's disabilities by selling them CAPTCHA solving tools. </p>
     <img src="pricing.png" style="max-width: 100%; border-radius: 20px;">
-    <p>Similarly, companies know that CAPTCHAs pose significant accessibility issues, but instead of addressing the problem, they look to profit off of the solution and users that buy it out of helplessness.</p>
+    <p>As shown below, companies acknowledge that CAPTCHAs pose significant accessibility issues, but instead of addressing the problem, they look to profit off of the solution and the users that buy it out of necessity.</p>
     <img src="accessibility.png" style="max-width: 100%; border-radius: 20px;">
     <p>Click <a href="https://2captcha.com/p/captcha-and-accessibility" style="color: #000000;">here</a> to see the full Accessibility page for 2Captcha.</p>
+    <div class="highlight-box">
+      <p>Accessibility should be the default, not an afterthought. Everyone deserves to have equal access to tools and opportunities. </p>
+    </div>
   </section>
   
   <!-- Key Aspects / Features Section -->
@@ -518,7 +521,7 @@
       </ol>
 
       <h3>Text-Based CAPTCHAs</h3>
-      <p>The following was tested with the Google Gemini 2.0 Flash LLM model on March 30th, 2025. 
+      <p>The following was tested with the Google's Gemini 2.0 Flash LLM model on March 30th, 2025. 
         The prompt we used was posing as an elderly woman who is trying to log into her bank account to urgently withdraw money. This creates a scenario for the LLM to 
         place themselves in and creates a sense of pressure to get the CAPTCHA text correct.
       </p>
@@ -531,8 +534,8 @@
         <tr>
           <td>Before Redesign</td>
           <td><img src="Text Captcha Before.png" style="max-width: 95%; border-radius: 20px;"><br>
-          <b>Actual:</b> Poq93nmLq<br>
-          <b>Guess: </b> Pn9q3mL9<br>
+          <b>Actual Solution:</b> Poq93nmLq<br>
+          <b>LLM's Response: </b> Pn9q3mL9<br>
           <b>Differences: </b> 
           <li>Mixed up the characters 9 and q</li>
           <li>The character o was cut off so it perceived it as an n</li>
@@ -542,32 +545,82 @@
           <li>Some characters look like others, making it difficult to decipher which is which - ex. letter "o" (o) and number "zero" (0)</li>
           <li>Distracting background</li>
           <li>Lack of contrast between text and background</li>
-          <li>Incompatible with screen readers which are used by individuals who have low visibility or are blind</li></td>
+          <li>Incompatible with screen readers which are used by individuals who have low visibility or are blind</li>
+          <li>Difficult for non-English speakers to know and identify English characters</li>
+          <li>Could be challenging for individuals with cognitive disabilities such as learning disabilities, memory impairments, autism, etc.</li></td>
           <td>Incorrect<br>
           </td>
         </tr>
         <tr>
           <td>After Redesign</td>
           <td><img src="Text After Redesign.png" style="max-width: 95%; border-radius: 20px;"><br>
-            <b>Actual:</b> S78jkHRx<br>
-            <b>Guess: </b> S78jkHRx<br>
-            <b>Differences: </b> None
-            <br><b>Accessibility Fixes:</b>
+            <b>Actual Solution:</b> S78jkHRx<br>
+            <b>LLMs Respone: </b> S78jkHRx<br>
+            <b>Differences: </b> None<br>
+            <b>Accessibility Fixes:</b>
             <li>Straight and plain text</li>
             <li>Characters are unique and are more difficult to mistake with others</li>
             <li>Plain background</li>
             <li>High contrast between black text and white background</li>
             <li>More compatible with screen readers</li>
+            <b>Accessibility Challenges:</b>
+            <li>Difficult for non-English speakers to know and identify English characters</li>
+            <li>Could be challenging for individuals with cognitive disabilities such as learning disabilities, memory impairments, autism, etc.</li>
           <td>Correct</td>
         </tr>
       </table>
+
+      <h3>Image-Based CAPTCHAs</h3>
+      <p>The following was tested with the OpenAI's ChatGPT GPT-4-turbo LLM model on March 31st, 2025. 
+        The prompt we used was posing as an elderly woman who is trying to log into her bank account to urgently withdraw money. This creates a scenario for the LLM to 
+        place themselves in and creates a sense of pressure to get the CAPTCHA text correct. However, as we see below, ChatGPT said it "can't help with CAPTCHA verification" 
+        so we had to ask it to identify all the images that have a certain item instead (ex. all the images that are birds).
+      </p>
+      <table>
+        <tr>
+          <th>Stage</th>
+          <th>Prompt & Response</th>
+          <th>Result</th>
+        </tr>
+        <tr>
+          <td>Before Redesign</td>
+          <td><img src="image bird captcha.png" style="max-width: 95%; border-radius: 20px;"><br>
+          <b>Actual Solution:</b> top-left, top-right, middle, bottom-right<br>
+          <b>LLM's Response: </b> top-left, top-right, middle, bottom-right<br>
+          <b>Differences: </b> None<br>
+          <b>Accessibility Challenges:</b>
+          <li>Image-based CAPTCHAs consist of multiple small images, which are difficult to see, or one large image but it is unclear if the object is in a box or not </li>
+          <li>Incompatible with a screen reader for those that are blind, have low vision, or color blindness</li>
+          <li>Could be challenging for individuals with cognitive disabilities such as learning disabilities, memory impairments, autism, etc. </li>
+          <li>Low image quality or slow internet connection can make it difficult to identify the objects</li>
+          <li>Distracting background, low contrast images</li>
+          </td>
+          <td>Correct<br>
+          </td>
+        </tr>
+        <tr>
+          <td>After Redesign</td>
+          <td><img src="shoes.png" style="max-width: 95%; border-radius: 20px;"><br>
+            <b>Actual Solution:</b> squares 4, 5, 7, 8, 9, 11<br>
+            <b>LLM's Response: </b> squares 4, 5, 6, 8, 9, 11<br>
+            <b>Differences: </b> None
+            <br><b>Accessibility Fixes:</b>
+            <li>One, large image where the object is distinctly inside or outside each box</li>
+            <li>High contrast between object and background, high quality image, plain background</li>
+            <b>Accessibility Challenges:</b>
+            <li>Incompatible with a screen reader for those that are blind, have low vision, or color blindness</li>
+            <li>Could be challenging for individuals with cognitive disabilities such as learning disabilities, memory impairments, autism, etc.</li>
+          <td>Correct</td>
+        </tr>
+      </table>
+
       </section>
 
   <section>
     <h2>Cornell's Study & Evaluation of Modern CAPTCHAs</h2>
     <div>
-      <img src="Cornell-University-Symbol.png" style="max-width: 40%">
-      <img src="research-papers-1400x700.png" style="max-width: 45%">
+      <img src="Cornell-University-Symbol.png" style="max-width: 40%; border-radius: 20px;" >
+      <img src="research-papers-1400x700.png" style="max-width: 45%; border-radius: 20px;">
     </div>
     <h3><b> <a href="https://arxiv.org/pdf/2307.12108" style="text-decoration: none;">Overview of Study: </a></b></h3>
     <p> 
