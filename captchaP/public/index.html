@@ -88,11 +88,13 @@
     }
     .highlight {
       color: #d6336c;
+      font-size: 1.1rem;
       font-weight: bold;
     }
     .highlight1 {
       color: #9533d6;
       font-weight: bold;
+      font-size: 1.1rem;
     }
     .highlight-box {
       background-color: #ffefef;
@@ -175,13 +177,10 @@
   <section>
     <h2>Why This Matters</h2>
     <p>
-      CAPTCHAs are everywhere—but traditional implementations often impose significant challenges for individuals with disabilities. It’s <span class="highlight">crucial</span> that everyone can navigate the digital world without barriers.
-    </p>
-  </section>
-
-  <section>
-    <h2>Paid CAPTCHA Solvers</h2>
-    <p>Some services pay humans minimal wages to solve CAPTCHAs, essentially turning them into a mechanical task rather than a security measure. This practice defeats the original purpose of CAPTCHAs entirely.</p>
+      CAPTCHAs are everywhere—but traditional implementations often impose significant challenges for individuals with disabilities. It’s <span class="highlight">crucial</span> that everyone can navigate the digital world without barriers. </p>
+    <p>Furthermore, it is extremely disgusting to see how some companies like 2Captcha are profiting off of user's disabilities by selling them CAPTCHA solving tools. </p>
+    <img src="pricing.png" style="max-width: 100%; border-radius: 20px;">
+    <p>See <a href="https://2captcha.com/p/captcha-and-accessibility" style="color: #000000;">here</a> to see the full Accessibility page for 2Captcha.</p>
   </section>
   
   <!-- Key Aspects / Features Section -->
@@ -529,7 +528,7 @@
         </tr>
         <tr>
           <td>Before Redesign</td>
-          <td><img src="Text Captcha Before.png" style="max-width: 95%;"><br>
+          <td><img src="Text Captcha Before.png" style="max-width: 95%; border-radius: 20px;"><br>
           <b>Actual:</b> Poq93nmLq<br>
           <b>Guess: </b> Pn9q3mL9<br>
           <b>Differences: </b> 
@@ -547,7 +546,7 @@
         </tr>
         <tr>
           <td>After Redesign</td>
-          <td><img src="Text After Redesign.png" style="max-width: 95%;"><br>
+          <td><img src="Text After Redesign.png" style="max-width: 95%; border-radius: 20px;"><br>
             <b>Actual:</b> S78jkHRx<br>
             <b>Guess: </b> S78jkHRx<br>
             <b>Differences: </b> None
@@ -560,7 +559,6 @@
           <td>Correct</td>
         </tr>
       </table>
-      
       </section>
 
   <section>
@@ -572,7 +570,7 @@
     <h3><b> <a href="https://arxiv.org/pdf/2307.12108" style="text-decoration: none;">Overview of Study: </a></b></h3>
     <p> 
       <strong>Participants: </strong> 1000-1400 People<br>
-      <strong> Purpose: </strong> To observe CAPTCHA solve time, user preference regading CAPTCHAs, accuracy rate in solving CAPTCHAs, and whether factors such as demographics and experimental context affects solve time. <br>
+      <strong> Purpose: </strong> To observe CAPTCHA solve time, user preference regarding CAPTCHAs, accuracy rate in solving CAPTCHAs, and whether factors such as demographics and experimental context affects solve time. <br>
       <strong>Example Experiment Task: </strong> Each participant asked to solve 10 CAPTCHAs each. <br>
       <strong> CAPTCHAs in Study: </strong>two reCAPTCHA v2 CAPTCHAs, two game-based CAPTCHAs from Arkose Labs, two hCAPTCHAs, one slider-based CAPTCHA from Geetest, and three types of distorted text CAPTCHAs <br>
     </p>
@@ -586,9 +584,9 @@
         <p style="margin: 0px; margin-top:10px;"><b>Findings: </b></p>
         <ol style="margin-top: 5px; margin-bottom:10px;">
           <li> The study shows that majority of the bots were able to solve the CAPTCHAs faster than humans and all of the CAPTCHAs had a bot accuracy pencentage greater than humans</li>
-          <li>Specifically, the bots usually had an accuracy of above 85+ percent, with most of them being above 96% </li>
-          <li>Humans on the otherhand had an accuracy in solving CAPTCHAs 50-85% of the time</li>
-          <li>These results show us that bots are already very advanced in solving CAPTCHAs and can do it better than humans</li>
+          <li>Specifically, the bots usually had an accuracy of above 85%+, with most of them being above 96% </li>
+          <li>Humans on the otherhand had an accuracy in solving captchas 50%-85% of the time</li>
+          <li>These results show us that bots are already very advanced in solving captchas and can do it better than humans</li>
         </ol>
         <p style="font-size: 1rem; margin: 0px">Read the full study <a href="https://doi.org/10.48550/arxiv.2307.12108">here.</a></p>
      </div>
@@ -601,17 +599,31 @@
 
   <section>
     <h2>Attempt 2: Theory-Crafted CAPTCHA Alternatives</h2>
-    <p>As a result of our initial redesign and Cornell's Study of Modern CAPTCHAs, we attempted to create new CAPTCHAs such as gesture-based authentication, behavioral tracking, and user personalization. These alternatives aim to be more user-friendly, but none are without flaws, especially regarding privacy and edge-case handling.</p>
+    <p>As a result of our initial redesign and Cornell's Study of Modern CAPTCHAs, we attempted to create new CAPTCHAs such as gesture-based authentication, behavioral tracking, and speed-based authentication. These alternatives aim to be more user-friendly, but none are without flaws, especially regarding privacy and edge-case handling.</p>
   
     <h3>Idea 1: Speed-Based Turing Authentication</h3>
     <img src="complex math.jpg" style="max-width: 100%; height: auto; border-radius: 20px;">
     <p>By now we know that AI is able to solve CAPTCHAs more accurately and quicker than humans, right? So, what if we instead of seeing that as a roadblock, we used it to our advantage?</p>
     <p>Traditionally, CAPTCHAs tried to identify bots by creating tests that only humans could do. For example, clicking an "I am not a robot" box, or typing out a warped text. However, as we found above, redesigning those tasks to be more accessible for humans made the CAPTCHAs even easier for a bot to decipher. So, instead of creating a task that is hard for a bot but easy for humans, we thought
-      why not create a task that is easy for bots to solve but would take humans noticeably longer? Below are some examples:</p>
-    <h3>Complex Mathematical Problems</h3>
-    <p>AI can instantly compute large and complex mathematical problems such as <b>43! mod 97</b> or determining if <b>15485863 is a prime number</b>. However, this would take humans more time since they would need to use a calculator, which takes time.</p>
+      why not create a task that is easy for bots to solve but would take humans noticeably longer?</p>
 
-    <p></p>
+    <p><span class="highlight">Idea: </span>AI can instantly compute certain large and complex tasks that humans can't. The test would set a threshold based on reasonable human solving speeds. If the solution comes back too fast, the system flags it as a bot.
+      <li><b>Complex Mathematical Problems: </b>Problems like 43! mod 97 or determining if 15485863 is a prime number </p>
+    <p><span class="highlight">Challenges: </span>
+    <li><b>Accessibility:</b> Complex tasks can creating significat barriers for people with learning disabilities</li>
+    <li><b>Unpleasant User Experience:</b> Complex tasks can frustrate users which can increase abandonement</li>
+    <li><b>Bypass Risk:</b> Attackers can bypass the test by coding a delay into the bot, so that it doesn't submit the solution until a certain amount of time has elapsed </li></p>
+    
+    <h3>Idea 2: Gesture-Based Authentication</h3>
+    <img src="gestures.png" style="max-width: 100%; height: auto; border-radius: 20px;">
+    <p>Another CAPTCHA alternative is a gesture-based authentication method leverages a user’s physical movements to verify their identity instead of solving tasks that require mental strength.</p>
+    <p><span class="highlight">Idea: </span> The following requests require real-world movement making automation difficult for a bot</p>
+    <li><b>Wave-to-Authenticate: </b>User waves their hand in front of the device’s camera, and the system detects a predefined motion.</li>
+    <li><b>Shake-to-Verify: </b>User shakes their device to authenticate. The system verifies the shake intensity, duration, and randomness.</li>
+    <p><span class="highlight">Challenges: </span>
+    <li><b>Accessibility:</b> Not suitable for users with mobility impairments</li>
+    <li><b>Device Dependency:</b> Requires users' device to have sensors like a camera</li>
+    <li><b>Bot Workaround:</b> If the gestures are too simple, attackers can bypass the test by creating a workaround </li></p>
   </section>
 
   <section>
