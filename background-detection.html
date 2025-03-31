@@ -1,0 +1,253 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Bot Detection</title>
+  <style>
+    /* Basic reset and typography */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background-color: #012c5a;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    /* Grid container for the tiles */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      text-align: center;
+    }
+    /* Styling each tile */
+    .tile {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .tile:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .home-icon {
+        position: absolute;
+        left: 10px;
+        top: 7px;
+    }
+    footer {
+      background-color: #012c5a;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="home-icon">
+        <img src="home icon.png" alt="Home" />
+    </a>
+    <h1>This Website's Inclusive Alternative to CAPTCHAs</h1>
+  </header>
+  
+  <div class="container">
+    <h2>Text will go here</h2>
+  </div>
+
+  <footer>
+    &copy; 2025 Reimagining CAPTCHAs Project
+  </footer>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purpose of CAPTCHAs</title>
+  <style>
+    /* Basic reset and typography */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      background-image: url('Robot.jpeg');
+      background-size: cover;
+      background-position: top;
+      background-attachment: fixed;
+    }
+    header {
+      background-color: #012c5a;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+    }
+    /* Home icon styles */
+    .home-icon {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .home-icon img {
+      height: 40px;
+      width: auto;
+      cursor: pointer;
+    }
+    .content {
+      max-width: 800px;
+      margin: 100px auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 {
+      margin-top: 0;
+    }
+    p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    ul {
+      margin-bottom: 1rem;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    .link-button {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      background-color: #012c5a;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+    .link-button:hover {
+      background-color: #011d41;
+    }
+    footer {
+      background-color: #012c5a;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+  <script src="bot-detector-script.js" defer></script>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="home-icon link-button">
+      <img src="home icon.png" alt="Home">
+    </a>
+    <h1>This Website's Inclusive Alternative to CAPTCHAs</h1>
+  </header>
+  <div class="content">
+    <h2 id="result" style="text-align:center"></h2>
+  </div>
+  <div class="content">
+    <h2>How does this website detects bots inclusively?</h2>
+    <p>
+        Instead of requiring users to complete a CAPTCHA puzzle to determine if they are human, this website detects bots entirely in the
+        background and non-invasively. This website's underlying detection script focuses on analyzing data from the user's browser, which
+        can contain common signs of bots that can be detected in real-time.
+
+    </p>
+    <h2>What are some indicator signs of bots?</h2>
+    <ul>
+        <li>
+            <b>The browser's <i>Navigator</i> object. </b> The <i>Navigator</i> object represents the state and identity of the user's
+            browser, such as its version, operating system, and capabilities. Some automation tools will set the <i>navigator.webdriver</i>
+            property to <i>true</i> as an indication of being controlled by an automated bot.<br> 
+        </li>
+        <li>
+            <b>The <i>Headless</i> indicator. </b> The <i>Headless</i> flag in a browser is a common indication of a user agent that is 
+            designed to scrape website data or perform other script-based activities. With these two property checks, most basic bot activity 
+            can be detected.
+        </li>
+        <li>
+            <b>Default language. </b> Browsers used by humans almost always have a set default language, which makes it simple for website 
+            content to be loaded in the user's preferred language, if available. However, bots typically do not have this property set, 
+            providing another indicator of bot activity.
+        </li>
+        <li>
+            <b>The browser's <i>eval</i> function. </b> Since bots can fake user-agent strings that the previous indicators rely on,
+            checking deeper properties of JavaScript functions can help detect inconsistencies. This website's script verifies properties 
+            like the length of the <i>eval</i> function, which should be consistent for each browser. If a a mismatch is detected, which 
+            may occur in headless or modified browsers, it suggests the environment might be automated or tampered with.
+        </li>
+        <li>
+            <b>The <i>Document Object Model</i>.</b> The DOM is a structured representation of a web page that browsers create when loading 
+            web pages. The page is organized as a tree of elements to be dynamically interacted with. Some automation tools add specific 
+            attributes to the DOM that can reveal bot activity, which this website's script can pick up on.
+        </li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h2>Try it yourself!</h2>
+    <p>
+        You can see the bot detection script operate in real-time at <b><a id="plain-link" target="_blank" href="https://chrome.browserless.io/debugger/">Browserless Debugger</a></b>,
+        which can simulate bot activity. Replace the code with the following, then click the play button at the top-right. Wait a moment for 
+        it to load, then this page will be displayed with a "Bot Detected" message!
+    </p>
+    <h3>Copy-paste this code:</h3>
+    <code>
+        export default async ({ page }: { page: Page }) => { await page.goto('https://google.com/'); }
+    </code>
+    <p><b>***There will be a screenshot here of what it should look like***</b></p>
+  </div>
+
+  <div class="content">
+    <h2>What are some limitations to this approach?</h2>
+    <p>
+        Unfortunately, this website's bot detection script isn't perfect. In the grand scheme of bot detection, it has quite a narrow focus, 
+        detecting only a few indicators like navigator.webdriver and “Headless” in the user agent, which more advanced bots would be 
+        capable of bypassing. It also targets a limited number of tools, letting it work well against certain automation tools, but it may 
+        miss bots using other techniques. Further, legitimate variations in browsers can affect detection accuracy. Finally, with the 
+        constantly evolving nature of technology, both bots and browsers are always changing; continued efficacy requires consistent 
+        adaptations to new automated bot techniques.
+    </p>
+    <p>
+        Further improvements could be made by expanding the scope beyond browser-based analysis. Although more intrusive from a privacy 
+        perspective, analyzing user behaviour such as scrolling patterns, mouse movements, and speed of traversal through the site would 
+        provide additional information valuable for bot detection. However, these methods may also be more conducive to false-positives from 
+        to accessibility devices. For example, a specialized mouse or interactive device may <i>appear</i> to be bot-generated behaviour 
+        if it deviates from typical mouse movement patterns. It is crucial that website developers do not compromise on accessibility in
+        favour of bot prevention.
+    </p>
+    <a class="link-button" href="index.html">Back to Home</a>
+  </div>
+
+  <footer>
+    &copy; 2025 Reimagining CAPTCHAs Project
+  </footer>
+</body>
+</html>
