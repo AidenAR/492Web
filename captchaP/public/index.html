@@ -398,9 +398,9 @@
 
   <section>
     <h2>Professor Interviews and Key Insights</h2>
-    <p>We met with and interviewed two professors at the University of Waterloo to learn their opinions on CAPTCHAs, their future with AI, and how accessability plays a role in everything.</p>
+    <p>We met with and interviewed two professors at the University of Waterloo to understand their opinions on CAPTCHAs, the future with AI, and how accessibility is impacted by technology.</p>
     <div class="highlight-box">
-      <p>DISCLAIMER: The written answers displayed are not completely direct quotes. All information and thoughts are from the respective Professors. However, aspects such as wording have been modified to ensure a better flow and user experience when reading.</p>
+      <p>DISCLAIMER: The answers displayed are not direct quotes. All information and thoughts are from the respective Professors. However, aspects such as wording have been modified to ensure a better flow and user experience when reading.</p>
     </div>
     <div class="highlight-box" style="background-color: #c4ffe9; border-left: 4px solid #0f774c;">
       <p>AKNOWLEDGEMENT: We would like to extend our deepest gratitude to Professor Urs Hengartner and Professor Jeff Avery for providing their valubale insights!</p>
@@ -408,8 +408,8 @@
     <div style="display: flex; flex-direction: row; justify-content: space-between;">
       <img src="prof-one.avif" style="max-width: 25%;">
       <div style="background-color: #012c5a; padding: 30px; display: flex; flex-direction: column; justify-content: center;">
-        <h3 style="color: #eef9ff; margin-top: 0px">Meet Professor Urs Hengartner!</h3>
-        <p style="margin: 0px; margin-left: 15px; color: #eef9ff;"> Professor Urs Hengartner is an associate professor at the University of Waterloo. He teches many classes related to Computer Security and Privacy as well as User Authentication, which is also where his interests in research lay. This includes "authenticating users based on their behavioural or physiological biometrics." He also recieved his M.S. and Ph.D in Computer Science from Carnegie Mellon. <br> Fun Fact: He attend grad school with the creator of CAPTCHAs and CEO of Duolingo, Luis von Ahn.</p>
+        <h3 style="color: #eef9ff; margin-left: 15px; margin-top: 0px">Meet Professor Urs Hengartner!</h3>
+        <p style="margin: 0px; margin-left: 15px; color: #eef9ff;"> Professor Urs Hengartner is an Associate Professor at the University of Waterloo. He teaches courses related to Computer Security and Privacy, and User Authentication, which is also where his interests in research lie. This includes "authenticating users based on their behavioural or physiological biometrics." He recieved his M.S. and Ph.D in Computer Science from Carnegie Mellon. <br><i><b>Fun Fact: He attend grad school with the creator of CAPTCHAs and CEO of Duolingo, Luis von Ahn!</b></i></p>
         <p style="margin: 0px; margin-left: 15px; color: #eef9ff;">Read more about Professor Hengartner <a href="https://cs.uwaterloo.ca/~uhengart/" style="color: #eef9ff;">here!</a></p>
       </div>
      </div>
@@ -449,8 +449,8 @@
  <div style="display: flex; flex-direction: row; justify-content: space-between;">
     <img src="prof.png" style="max-width: 25%;">
     <div style="background-color: #012c5a; padding: 30px; display: flex; flex-direction: column; justify-content: center;">
-      <h3 style="color: #eef9ff; margin-top: 0px">Meet Professor Jeff Avery!</h3>
-      <p style="margin: 0px; margin-left: 15px; color: #eef9ff;"> Professor Jeff Avery is an associate professor at the University of Waterloo. He teches many classes related to Human Computer Interaction and Software Engineering, which is also where his interests in research lay. This includes software architecture/design, input and interection technologies, and optimization. Professor Avery is also an undergraduate academic advisor.</p>
+      <h3 style="color: #eef9ff; margin-left: 15px; margin-top: 0px">Meet Professor Jeff Avery!</h3>
+      <p style="margin: 0px; margin-left: 15px; color: #eef9ff;"> Professor Jeff Avery is an Associate Professor at the University of Waterloo. He teaches courses related to Human Computer Interaction and Software Engineering, which is also where his interests in research lie. This includes software architecture and design, input and interaction technologies, and optimization. Professor Avery is also an undergraduate academic advisor.</p>
       <p style="margin: 0px; margin-left: 15px; color: #eef9ff;">Read more about Professor Avery <a href="https://cs.uwaterloo.ca/~j2avery/" style="color: #eef9ff;">here!</a></p>
     </div>
    </div>
@@ -494,11 +494,11 @@
    <div class="highlight-box">
     <h3>Key Insights</h3>
    <ol style="margin-top: 5px; margin-bottom:10px;">
-    <li> No “one size fits all" solution for accessible CAPTCHAs as there are a broad spectrum of disabilities.</li>
+    <li>No “one size fits all" solution for accessible CAPTCHAs as there are a broad spectrum of disabilities.</li>
     <li>Companies care about profits more than designing for accessibility, catering to the mass audience. Accessibility should be legislated to encourage attention.</li>
-    <li>Hard to find test subjects for accessability, which also demotivates companies.</li>
+    <li>Hard to test accessibility solutions with those that would use it, which also demotivates companies.</li>
     <li>Traditional CAPTCHAs are becoming unreliable and background processes or behaviour-based authentication like Cloudflare’s Turnstile system seem to be future replacements for CAPTCHAs. However, there's many privacy concerns with data collection and there may be false positives.</li>
-    <li>It's really important to be able to distinguish between humans and bots, which makes CAPTCHA soltuions being accessible even more crucial.</li>
+    <li>It's really important to be able to distinguish between humans and bots, which makes CAPTCHA solutions being accessible even more crucial.</li>
   </ol>
   </div>
   </section>
@@ -603,10 +603,13 @@
     <h2>Attempt 2: Theory-Crafted CAPTCHA Alternatives</h2>
     <p>As a result of our initial redesign and Cornell's Study of Modern CAPTCHAs, we attempted to create new CAPTCHAs such as gesture-based authentication, behavioral tracking, and user personalization. These alternatives aim to be more user-friendly, but none are without flaws, especially regarding privacy and edge-case handling.</p>
   
-    <h3>Are you smarter than AI?</h3>
-    <p>By now we know that AI is able to solve CAPTCHAs more accruately and quicker than humans, right? So, what if we used that to our advantage?</p>
-    <p>Solve Complex Mathematical Equations Instantly – AI can compute large numerical operations, solve differential equations, and perform matrix calculations in milliseconds.</p>
-  
+    <h3>Idea 1: Speed-Based Turing Authentication</h3>
+    <img src="complex math.jpg" style="max-width: 100%; height: auto; border-radius: 20px;">
+    <p>By now we know that AI is able to solve CAPTCHAs more accurately and quicker than humans, right? So, what if we instead of seeing that as a roadblock, we used it to our advantage?</p>
+    <p>Traditionally, CAPTCHAs tried to identify bots by creating tests that only humans could do. For example, clicking an "I am not a robot" box, or typing out a warped text. However, as we found above, redesigning those tasks to be more accessible for humans made the CAPTCHAs even easier for a bot to decipher. So, instead of creating a task that is hard for a bot but easy for humans, we thought
+      why not create a task that is easy for bots to solve but would take humans noticeably longer? Below are some examples:</p>
+    <h3>Complex Mathematical Problems</h3>
+    <p>AI can instantly compute large and complex mathematical problems such as <b>43! mod 97</b> or determining if <b>15485863 is a prime number</b>. However, this would take humans more time since they would need to use a calculator, which takes time.</p>
 
     <p></p>
   </section>
@@ -842,7 +845,8 @@
   </section>
 
   <footer>
-    &copy; Created by Ananya Ohrie, Krishna Joshi, Phillip Carson, & Aiden Ramgoolam
+    <p>
+    &copy; Created by Ananya Ohrie, Krishna Joshi, Phillip Carson, & Aiden Ramgoolam</p>
   </footer>
 </body>
 </html>
