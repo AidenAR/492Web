@@ -141,6 +141,54 @@
     .summary-metrics th {
       background-color: #dbe9f4;
     }
+
+    .menu-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+        .menu-button {
+            background-color: #000000;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .side-menu {
+            position: fixed;
+            top: 0;
+            right: -200px;
+            width: 200px;
+            height: 100%;
+            background-color: white;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: right 0.3s ease-in-out;
+            padding-top: 50px;
+            overflow-y: auto;
+        }
+        .side-menu a {
+            display: block;
+            padding: 15px;
+            color: #000000;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+            font-size: 1rem;
+        }
+        .side-menu a:hover {
+            background-color: #ddd;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
   </style>
   <script src="bot-detector-script.js" defer></script>
 </head>
@@ -148,13 +196,43 @@
   <header>
     <h1>Reimagining CAPTCHAs</h1>
   </header>
+
+  <div class="menu-container">
+    <button class="menu-button" onclick="toggleMenu()">☰ Menu</button>
+</div>
+
+<div class="side-menu" id="sideMenu">
+    <button class="close-button" onclick="toggleMenu()">&times;</button>
+    <a href="#why">Purpose of CAPTCHAs</a>
+    <a href="#important">Why Is Accessibility Important</a>
+    <a href="#key_research">Key Research</a>
+    <a href="#challenges">CAPTCHA Accessibility Challenges</a>
+    <a href="#metric">Metrics</a>
+    <a href="#limitations">Limitations of CAPTCHAs</a>
+    <a href="#prof">Professor Interviews</a>
+    <a href="#attempt_1">Redesign of Existing CAPTCHAs</a>
+    <a href="#cornell">Cornell Study</a>
+    <a href="attempt_2">Theory-Crafted Alternatives</a>
+    <a href="background">Background Bot Detection</a>
+    <a href="authentication">This Website's Authentication</a>
+    <a href="what">What Can You Do?</a>
+    <a></a>
+    <a></a>
+</div>
+
+<script>
+  function toggleMenu() {
+      var menu = document.getElementById("sideMenu");
+      menu.style.right = (menu.style.right === "0px") ? "-200px" : "0px";
+  }
+</script>
   
   <!-- Cartoon Image Embedded at the Top -->
   <img src="cartoon.png" alt="Cartoon illustration" class="intro-image" />
   
   <!-- Introduction -->
   <section>
-    <h2>Why do CAPTCHAs Exist?</h2>
+    <h2 id="why">Why do CAPTCHAs Exist?</h2>
     <p>
       CAPTCHAs (Completely Automated Public Turing test to tell Computers and Humans Apart) were created to protect websites from bots by verifying that the user is a real human. They serve as gatekeepers to prevent spam, abuse, and automated attacks.
     </p>
@@ -175,7 +253,7 @@
   </section>
 
   <section>
-    <h2>Why This Matters</h2>
+    <h2 id="important">Why Does Accessibility in CAPTCHAs Matter?</h2>
     <p>
       CAPTCHAs are everywhere—but traditional implementations often impose significant challenges for individuals with disabilities. It’s <span class="highlight">crucial</span> that everyone can navigate the digital world without barriers. </p>
     <p>Furthermore, it is extremely disgusting to see how some companies like 2Captcha are profiting off of user's disabilities by selling them CAPTCHA solving tools. </p>
@@ -190,7 +268,7 @@
   
   <!-- Key Aspects / Features Section -->
   <section>
-    <h2>Key Aspects of Our Research</h2>
+    <h2 id="key_research">Key Aspects of Our Research</h2>
     <div class="card-grid">
       <div class="card">
         <h3>Current Challenges</h3>
@@ -215,7 +293,7 @@
   
   <!-- CAPTCHA Accessibility Challenges -->
   <section>
-    <h2>CAPTCHA Accessibility Challenges</h2>
+    <h2 id="challenges">CAPTCHA Accessibility Challenges</h2>
     <div class="card-grid">
       <!-- Visual Impairment Card -->
       <div class="card">
@@ -299,7 +377,7 @@
   
   <!-- New Section: Summary Metrics -->
   <section class="summary-metrics">
-    <h2>Summary Metrics</h2>
+    <h2 id="metric">Summary Metrics</h2>
     <table>
       <tr>
         <th>Metric</th>
@@ -326,7 +404,7 @@
   
   <!-- CAPTCHA Limitations & Global Impact -->
   <section>
-    <h2>CAPTCHA Limitations & Global Impact</h2>
+    <h2 id="limitations">CAPTCHA Limitations & Global Impact</h2>
     <div class="card-grid">
       <!-- Security vs Accessibility Tradeoffs Card -->
       <div class="card">
@@ -401,7 +479,7 @@
   </section>
 
   <section>
-    <h2>Professor Interviews and Key Insights</h2>
+    <h2 id="prof">Professor Interviews and Key Insights</h2>
     <p>We met with and interviewed two professors at the University of Waterloo to understand their opinions on CAPTCHAs, the future with AI, and how accessibility is impacted by technology.</p>
     <div class="highlight-box">
       <p>DISCLAIMER: The answers displayed are not direct quotes. All information and thoughts are from the respective Professors. However, aspects such as wording have been modified to ensure a better flow and user experience when reading.</p>
@@ -509,7 +587,7 @@
 
 
   <section class="summary-metrics">
-    <h2>Attempt 1: Redesign of Existing CAPTCHAs</h2>
+    <h2 id="attempt_1">Attempt 1: Redesign of Existing CAPTCHAs</h2>
     <p>To make CAPTCHAs more accessible, we first attempted to redesign existing ones, specifically the text-based CAPTCHAs. </p>
     <p>Our approach was the following:
       <ol>
@@ -617,7 +695,7 @@
       </section>
 
   <section>
-    <h2>Cornell's Study & Evaluation of Modern CAPTCHAs</h2>
+    <h2 id="cornell">Cornell's Study & Evaluation of Modern CAPTCHAs</h2>
     <div>
       <img src="Cornell-University-Symbol.png" style="max-width: 40%; border-radius: 20px;" >
       <img src="research-papers-1400x700.png" style="max-width: 45%; border-radius: 20px;">
@@ -653,7 +731,7 @@
   </section>
 
   <section>
-    <h2>Attempt 2: Theory-Crafted CAPTCHA Alternatives</h2>
+    <h2 id="attempt_2">Attempt 2: Theory-Crafted CAPTCHA Alternatives</h2>
     <p>As a result of our initial redesign and Cornell's Study of Modern CAPTCHAs, we attempted to create new CAPTCHAs such as gesture-based authentication, behavioral tracking, and speed-based authentication. These alternatives aim to be more user-friendly, but none are without flaws, especially regarding privacy and edge-case handling.</p>
   
     <h3>Idea 1: Speed-Based Turing Authentication</h3>
@@ -665,7 +743,7 @@
     <p><span class="highlight">Idea: </span>AI can instantly compute certain large and complex tasks that humans can't. The test would set a threshold based on reasonable human solving speeds. If the solution comes back too fast, the system flags it as a bot.
       <li><b>Complex Mathematical Problems: </b>Problems like 43! mod 97 or determining if 15485863 is a prime number </p>
     <p><span class="highlight">Challenges: </span>
-    <li><b>Accessibility:</b> Complex tasks can creating significat barriers for people with learning disabilities</li>
+    <li><b>Accessibility:</b> Complex tasks can creating significant barriers for people with learning disabilities</li>
     <li><b>Unpleasant User Experience:</b> Complex tasks can frustrate users which can increase abandonement</li>
     <li><b>Bypass Risk:</b> Attackers can bypass the test by coding a delay into the bot, so that it doesn't submit the solution until a certain amount of time has elapsed </li></p>
     
@@ -682,7 +760,7 @@
   </section>
 
   <section>
-    <h2>The Way Forward: Background Bot Detection</h2>
+    <h2 id="background">The Way Forward: Background Bot Detection</h2>
     <p>
       Considering the glaring accessibility issues of CAPTCHA tests, there needs to be a completely different paradigm for distinguishing 
       bots from humans. Based on our research findings and discussions with experts, the way forward will be methods that 
@@ -729,7 +807,7 @@
   </section>
 
   <section>
-    <h2>This Website's Built-In Bot Detection</h2>
+    <h2 id="authentication">This Website's Built-In Bot Detection</h2>
     
     <div>
       <img id="resultImage" style="max-width: 100%; height: auto; border-radius: 30px;">
@@ -851,7 +929,7 @@
   </section>
 
   <section>
-    <h2>What can you do as a future developer?</h2>
+    <h2 id="what">What can you do as a future developer?</h2>
     <p>
       The future rests with you! Here's a couple accessibility-focussed principles to keep in mind as you build and bring ideas to light.
     </p>
