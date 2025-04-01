@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reimagining CAPTCHAs – Research Overview</title>
+  <title>CS 492 - Future of CAPTCHAs</title>
   <style>
     body {
       margin: 0;
@@ -100,6 +100,7 @@
       background-color: #ffefef;
       border-left: 4px solid #d6336c;
       padding: 1rem;
+      margin: 1rem;
       font-style: italic;
     }
     .intro-image {
@@ -165,7 +166,7 @@
         }
         .side-menu a {
             display: block;
-            padding: 8px;
+            padding: 10px;
             color: #000000;
             text-decoration: none;
             border-bottom: 1px solid #ddd;
@@ -198,16 +199,16 @@
 
 <div class="side-menu" id="sideMenu">
     <button class="close-button" onclick="toggleMenu()">&times;</button>
-    <a href="#why">What Are CAPTCHAs?</a>
-    <a href="#challenges">Accessibility Challenges With CAPTCHAs</a>
+    <a href="#why">CAPTCHAs Overview</a>
+    <a href="#challenges">Accessibility Challenges</a>
     <a href="#important">Why is Accessiblity Important?</a>
     <a href="#metric">Metrics</a>
-    <a href="#limitations">Limitations of CAPTCHAs</a>
+    <a href="#limitations">Other CAPTCHA Issues</a>
     <a href="#prof">Professor Interviews</a>
     <a href="#cornell">Cornell Study</a>
-    <a href="#attempt_1">Redesign of Existing CAPTCHAs</a>
-    <a href="#attempt_2">Theory-Crafted Alternatives</a>
-    <a href="#background">Background Bot Detection</a>
+    <a href="#attempt_1">Redesign Attempt #1</a>
+    <a href="#attempt_2">Redesign Attempt #2</a>
+    <a href="#background">The Way Forward: Background Detection</a>
     <a href="#authentication">This Website's Authentication</a>
     <a href="#what">What Can You Do?</a>
 </div>
@@ -247,7 +248,7 @@
     </p>
   </section>
   
-  <!-- Key Aspects / Features Section -->
+  <!-- Key Aspects / Features Section --> 
   <!-- <section>
     <h2 id="key_research">Key Aspects of Our Research</h2>
     <div class="card-grid">
@@ -403,7 +404,7 @@
     <div class="card-grid">
       <div class="card">
         <h3 style="text-align:center">User Experience Impact</h3>
-        <ul>
+        <ul style="margin-right: 1rem; margin-left: 1rem;">
           <li>Increased form abandonment rates by <span class="highlight">30–40%</span>.</li>
           <li>Creates frustration for all users and adds extra time to complete tasks.</li>
           <li>Mobile users are disproportionately affected.</li>
@@ -413,7 +414,7 @@
       <div class="card">
 
         <h3 style="text-align:center">Privacy Concerns</h3>
-        <ul>
+        <ul style="margin-right: 1rem; margin-left: 1rem;">
           <li>CAPTCHA and alternative services can track user behavior across sites.</li>
           <li>Data may be used for <span class="highlight">marketing</span> purposes.</li>
           <li>Users are often unaware of full tracking scope.</li>
@@ -499,13 +500,13 @@
       <p>DISCLAIMER: The answers displayed are not direct quotes. All information and thoughts are from the respective Professors. However, aspects such as wording have been modified to ensure a better flow and user experience when reading.</p>
     </div>
     <div class="highlight-box" style="background-color: #c4ffe9; border-left: 4px solid #0f774c;">
-      <p>AKNOWLEDGEMENT: We would like to extend our deepest gratitude to Professor Urs Hengartner and Professor Jeff Avery for providing their valubale insights!</p>
+      <p>ACKNOWLEDGEMENT: We would like to extend our deepest gratitude to Professor Urs Hengartner and Professor Jeff Avery for providing their valuable insights!</p>
     </div>
     <div style="display: flex; flex-direction: row; justify-content: space-between;">
       <img src="prof-one.avif" style="max-width: 25%;">
       <div style="background-color: #012c5a; padding: 30px; display: flex; flex-direction: column; justify-content: center;">
         <h3 style="color: #eef9ff; margin-left: 15px; margin-top: 0px">Meet Professor Urs Hengartner!</h3>
-        <p style="margin: 0px; margin-left: 15px; color: #eef9ff;"> Professor Urs Hengartner is an Associate Professor at the University of Waterloo. He teaches courses related to Computer Security and Privacy, and User Authentication, which is also where his interests in research lie. This includes "authenticating users based on their behavioural or physiological biometrics." He recieved his M.S. and Ph.D in Computer Science from Carnegie Mellon. <br><i><b>Fun Fact: He attend grad school with the creator of CAPTCHAs and CEO of Duolingo, Luis von Ahn!</b></i></p>
+        <p style="margin: 0px; margin-left: 15px; color: #eef9ff;"> Professor Urs Hengartner is an Associate Professor at the University of Waterloo. He teaches courses related to Computer Security and Privacy, and User Authentication, which is also where his interests in research lie. This includes "authenticating users based on their behavioural or physiological biometrics." He recieved his M.S. and Ph.D in Computer Science from Carnegie Mellon. <br><i><b>Fun Fact: He attended grad school with the creator of CAPTCHAs and CEO of Duolingo, Luis von Ahn!</b></i></p>
         <p style="margin: 0px; margin-left: 15px; color: #eef9ff;">Read more about Professor Hengartner <a href="https://cs.uwaterloo.ca/~uhengart/" style="color: #eef9ff;">here!</a></p>
       </div>
      </div>
@@ -906,7 +907,7 @@
           <h3 class="highlight">The Headless Indicator</h3>
           <p>
             The Headless flag in a browser is a common indication of a user agent that is 
-            designed to scrape website data or perform other script-based activities. With these two property checks, most basic bot activity 
+            designed to scrape website data or perform other script-based activities. With the Headless and navigator property checks, most basic bot activity 
             can be detected.
           </p>
         </div>
