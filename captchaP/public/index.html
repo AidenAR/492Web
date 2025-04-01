@@ -358,7 +358,7 @@
   </section>
 
   <section>
-    <h2 id="important">Why Does Accessibility in CAPTCHAs Matter?</h2>
+    <h2 id="important">Why does accessibility in CAPTCHAs matter?</h2>
     <p>
       CAPTCHAs are everywhere across the web — but traditional implementations often impose significant challenges for individuals with disabilities. It’s <span class="highlight">crucial</span> that everyone can navigate the digital world without barriers. </p>
     <p>Furthermore, companies like <a href="https://2captcha.com" target="_blank">2Captcha</a> are profiting off of these accessibility challenges by selling CAPTCHA solving tools. </p>
@@ -400,7 +400,7 @@
   
 
   <section>
-    <h2 id="limitations">What Are Other Issues With CAPTCHAs?</h2>
+    <h2 id="limitations">What are other issues with CAPTCHAs?</h2>
     <div class="card-grid">
       <div class="card">
         <h3 style="text-align:center">User Experience Impact</h3>
@@ -638,7 +638,7 @@
 
   <section class="summary-metrics">
     <h2 id="attempt_1">Attempt 1: Redesign of Existing CAPTCHAs</h2>
-    <p>To make CAPTCHAs more accessible, we first attempted to redesign existing ones, specifically the text-based CAPTCHAs. </p>
+    <p>To make CAPTCHAs more accessible, we first attempted to redesign existing ones, specifically the text-based and image-based CAPTCHAs. </p>
     <p>Our approach was the following:
       <ol>
       <li><b>Test a traditionally difficult or inaccessible example of the CAPTCHA with a large language model (LLM) like ChatGPT or Gemini to see if it can solve it. </b>
@@ -698,19 +698,29 @@
         </tr>
       </table>
 
-    <!--
+      <div class="highlight-box">
+        <p><b>Key Takeaway: </b> The LLM wasn't able to solve the original text-based CAPTCHA correctly, which demonstrates how this authentication method is secure. However, after the redesign to make it more accessible, 
+        it was easy for the LLM to bypass. Similarly, the redesign attempt still poses accessibility challenges for certain individuals, so text-based CAPTCHAs are not a strong or accessible authentication solution. </p>
+      </div>
+
+      <!--
       <h3>Hassan's Experience with ADHD</h3>
       <p>To further understand the challenges that CAPTCHAs present for individuals with cognitive disabilities, we interviewed <strong>Hassan</strong>, a student with ADHD. He attempted the original text-based CAPTCHA from Attempt 1 and shared his experience navigating through it.</p>
 
-
+      <video controls style="max-width: 100%; border-radius: 20px;">
+        <source src="https://dl.dropboxusercontent.com/scl/fi/fide0433qk6jwc0249ysx/HassanAidenDsylexic2.mov?rlkey=0j11d504k79x8dvbq29is6edy&st=ptji7h3o&raw=1" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
 
       <p>Hassan mentioned that distorted characters, overlapping text, and background noise caused significant difficulty. His experience highlighted the cognitive overload that CAPTCHAs can introduce, especially when under pressure. Even after focusing intensely, he misinterpreted several characters, which led to a failed attempt—similar to the issues encountered by the language model.</p>
+      <video controls style="max-width: 100%; border-radius: 20px;">
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
 
       <div class="highlight-box">
         <p><strong>Takeaway:</strong> Real-world user feedback—especially from people with disabilities—is essential when evaluating CAPTCHA accessibility. Redesigns must not only test better with AI, but more importantly, with real humans like Hassan who face these challenges daily.</p>
-      </div>
-    -->
-      
+      </div> -->
 
       <h3>Image-Based CAPTCHAs</h3>
       <p>The following was tested with the OpenAI's ChatGPT GPT-4-turbo LLM model on March 31st, 2025. 
@@ -756,6 +766,11 @@
         </tr>
       </table>
 
+      <div class="highlight-box">
+        <p><b>Key Takeaway: </b> The LLM was able to get the original image-based CAPTCHA correct, which demonstrates how this authentication method isn't secure to begin with. After the redesign to make it more accessible, 
+        it was even easier for the LLM to bypass. Similarly, the redesign attempt still poses accessibility challenges for certain individuals, so image-based CAPTCHAs are not a strong or accessible authentication solution. </p>
+      </div>
+
       </section>
 
   <section>
@@ -772,9 +787,14 @@
       <li><b>Complex Mathematical Problems: </b>Problems like 43! mod 97 or determining if 15485863 is a prime number </p>
     <p><span class="highlight">Challenges: </span>
     <li><b>Accessibility:</b> Complex tasks can creating significant barriers for people with learning disabilities</li>
+    <li><b>Filters Out Savants:</b> After speaking to Dan Brown, Professor at the University of Waterloo, he mentioned that rating on speed is problematic because you may be filtering out naturally smart humans (ex. autistic savants) </li>
     <li><b>Unpleasant User Experience:</b> Complex tasks can frustrate users which can increase abandonement</li>
     <li><b>Bypass Risk:</b> Attackers can bypass the test by coding a delay into the bot, so that it doesn't submit the solution until a certain amount of time has elapsed </li></p>
     
+    <div class="highlight-box">
+      <p><b>Key Takeaway: </b> Although this idea seemed interesting initially, it poses significant accessibility challenges. Therefore, this is not a good authentication alternative for CAPTCHAs.</p>
+    </div>
+
     <h3>Idea 2: Gesture-Based Authentication</h3>
     <img src="gestures.png" style="max-width: 100%; height: auto; border-radius: 20px;">
     <p>Another CAPTCHA alternative is a gesture-based authentication method leverages a user’s physical movements to verify their identity instead of solving tasks that require mental strength.</p>
@@ -784,7 +804,13 @@
     <p><span class="highlight">Challenges: </span>
     <li><b>Accessibility:</b> Not suitable for users with mobility impairments</li>
     <li><b>Device Dependency:</b> Requires users' device to have sensors like a camera</li>
-    <li><b>Bot Workaround:</b> If the gestures are too simple, attackers can bypass the test by creating a workaround </li></p>
+    <li><b>Bot Workaround:</b> If the gestures are too simple, attackers can bypass the test by creating a workaround </li>
+    <li><b>Data Privacy Issues:</b> People supply new data for AI models to train on </li></p>
+
+    <div class="highlight-box">
+      <p><b>Key Takeaway: </b> This alternative is more secure in the sense that bots may not be able to bypass it as easily as the others mentioned since it requires physical interaction. However, 
+        similar to the speed-based turing attempt, this poses significant accessibility and data privacy challenges. Therefore, this is not a strong or accessible alternative for CAPTCHAs. </p>
+    </div>
   </section>
 
   <section>
