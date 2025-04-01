@@ -165,7 +165,7 @@
         }
         .side-menu a {
             display: block;
-            padding: 15px;
+            padding: 8px;
             color: #000000;
             text-decoration: none;
             border-bottom: 1px solid #ddd;
@@ -194,7 +194,7 @@
 
   <div class="menu-container">
     <button class="menu-button" onclick="toggleMenu()">☰ Menu</button>
-</div>
+  </div>
 
 <div class="side-menu" id="sideMenu">
     <button class="close-button" onclick="toggleMenu()">&times;</button>
@@ -204,14 +204,12 @@
     <a href="#metric">Metrics</a>
     <a href="#limitations">Limitations of CAPTCHAs</a>
     <a href="#prof">Professor Interviews</a>
-    <a href="#attempt_1">Redesign of Existing CAPTCHAs</a>
     <a href="#cornell">Cornell Study</a>
-    <a href="attempt_2">Theory-Crafted Alternatives</a>
-    <a href="background">Background Bot Detection</a>
-    <a href="authentication">This Website's Authentication</a>
-    <a href="what">What Can You Do?</a>
-    <a></a>
-    <a></a>
+    <a href="#attempt_1">Redesign of Existing CAPTCHAs</a>
+    <a href="#attempt_2">Theory-Crafted Alternatives</a>
+    <a href="#background">Background Bot Detection</a>
+    <a href="#authentication">This Website's Authentication</a>
+    <a href="#what">What Can You Do?</a>
 </div>
 
 <script>
@@ -226,7 +224,7 @@
   
   <!-- Introduction -->
   <section>
-    <h2 id="why">What Are CAPTCHAs?</h2>
+    <h2 id="why">An Overview of CAPTCHAs</h2>
     <p>
       CAPTCHAs (Completely Automated Public Turing test to tell Computers and Humans Apart) were created to protect websites from bots and 
       verify that the user is a real human. They serve as gatekeepers to prevent spam, abuse, and automated attacks.
@@ -639,7 +637,7 @@
 
   <section class="summary-metrics">
     <h2 id="attempt_1">Attempt 1: Redesign of Existing CAPTCHAs</h2>
-    <p>To make CAPTCHAs more accessible, we first attempted to redesign existing ones, specifically the text-based CAPTCHAs. </p>
+    <p>To make CAPTCHAs more accessible, we first attempted to redesign existing ones, specifically the text-based and image-based CAPTCHAs. </p>
     <p>Our approach was the following:
       <ol>
       <li><b>Test a traditionally difficult or inaccessible example of the CAPTCHA with a large language model (LLM) like ChatGPT or Gemini to see if it can solve it. </b>
@@ -699,6 +697,12 @@
         </tr>
       </table>
 
+      <br>
+      <div class="highlight-box">
+        <p><b>Key Takeaway: </b> The LLM was able to get the original image-based CAPTCHA correct, which demonstrates how this authentication method isn't secure to begin with. After the redesign to make it more accessible, 
+        it was even easier for the LLM to bypass. Similarly, the redesign attempt still poses accessibility challenges for certain individuals, so image-based CAPTCHAs are not a strong or accessible authentication solution. </p>
+      </div>
+
       <!--
       <h3>Hassan's Experience with ADHD</h3>
       <p>To further understand the challenges that CAPTCHAs present for individuals with cognitive disabilities, we interviewed <strong>Hassan</strong>, a student with ADHD. He attempted the original text-based CAPTCHA from Attempt 1 and shared his experience navigating through it.</p>
@@ -717,8 +721,6 @@
       <div class="highlight-box">
         <p><strong>Takeaway:</strong> Real-world user feedback—especially from people with disabilities—is essential when evaluating CAPTCHA accessibility. Redesigns must not only test better with AI, but more importantly, with real humans like Hassan who face these challenges daily.</p>
       </div> -->
-
-      
 
       <h3>Image-Based CAPTCHAs</h3>
       <p>The following was tested with the OpenAI's ChatGPT GPT-4-turbo LLM model on March 31st, 2025. 
@@ -763,6 +765,12 @@
           <td>Correct</td>
         </tr>
       </table>
+
+      <br>
+      <div class="highlight-box">
+        <p><b>Key Takeaway: </b> The LLM was able to get the original image-based CAPTCHA correct, which demonstrates how this authentication method isn't secure to begin with. After the redesign to make it more accessible, 
+        it was even easier for the LLM to bypass. Similarly, the redesign attempt still poses accessibility challenges for certain individuals, so image-based CAPTCHAs are not a strong or accessible authentication solution. </p>
+      </div>
 
       </section>
 
@@ -867,7 +875,7 @@
           </p>
         </div>
       </div>
-      <div class="card-grid" style="text-align:center">
+      <!-- <div class="card-grid" style="text-align:center">
         <div class="card">
           <h3 class="highlight">The <code>eval</code> Function</h3>
           <p>
@@ -884,7 +892,7 @@
             attributes to the DOM that can reveal bot activity, which this website's script can pick up on.
           </p>
         </div>
-      </div>
+      </div> -->
       <div class="card-grid" style="text-align:center">
         <div class="card">
           <h3 class="highlight">The Navigator Object</h3>
