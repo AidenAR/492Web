@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reimagining CAPTCHAs – Research Overview</title>
+  <title>CS 492 - Future of CAPTCHAs</title>
   <style>
     body {
       margin: 0;
@@ -26,7 +26,7 @@
       margin: 0;
     }
     section {
-      padding: 2rem;
+      padding: 1.4rem;
       max-width: 1000px;
       margin: auto;
     }
@@ -94,13 +94,13 @@
     .highlight1 {
       color: #9533d6;
       font-weight: bold;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
     }
     .highlight-box {
       background-color: #ffefef;
       border-left: 4px solid #d6336c;
       padding: 1rem;
-      margin: 1.5rem 0;
+      margin: 1rem;
       font-style: italic;
     }
     .intro-image {
@@ -123,14 +123,10 @@
     /* New Summary Metrics Section styling */
     .summary-metrics {
       background-color: #ffffff;
-      padding: 2rem;
-      border-radius: 8px;
-      margin-bottom: 2rem;
     }
     .summary-metrics table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 1rem;
     }
     .summary-metrics th, .summary-metrics td {
       border: 1px solid #ccc;
@@ -170,7 +166,7 @@
         }
         .side-menu a {
             display: block;
-            padding: 15px;
+            padding: 10px;
             color: #000000;
             text-decoration: none;
             border-bottom: 1px solid #ddd;
@@ -194,30 +190,27 @@
 </head>
 <body>
   <header>
-    <h1>Reimagining CAPTCHAs</h1>
+    <h1>CS 492 Culminating Project: The Future of CAPTCHAs</h1>
   </header>
 
   <div class="menu-container">
     <button class="menu-button" onclick="toggleMenu()">☰ Menu</button>
-</div>
+  </div>
 
 <div class="side-menu" id="sideMenu">
     <button class="close-button" onclick="toggleMenu()">&times;</button>
-    <a href="#why">Purpose of CAPTCHAs</a>
-    <a href="#important">Why Is Accessibility Important</a>
-    <a href="#key_research">Key Research</a>
-    <a href="#challenges">CAPTCHA Accessibility Challenges</a>
+    <a href="#why">CAPTCHAs Overview</a>
+    <a href="#challenges">Accessibility Challenges</a>
+    <a href="#important">Why is Accessiblity Important?</a>
     <a href="#metric">Metrics</a>
-    <a href="#limitations">Limitations of CAPTCHAs</a>
+    <a href="#limitations">Other CAPTCHA Issues</a>
     <a href="#prof">Professor Interviews</a>
-    <a href="#attempt_1">Redesign of Existing CAPTCHAs</a>
     <a href="#cornell">Cornell Study</a>
-    <a href="attempt_2">Theory-Crafted Alternatives</a>
-    <a href="background">Background Bot Detection</a>
-    <a href="authentication">This Website's Authentication</a>
-    <a href="what">What Can You Do?</a>
-    <a></a>
-    <a></a>
+    <a href="#attempt_1">Redesign Attempt #1</a>
+    <a href="#attempt_2">Redesign Attempt #2</a>
+    <a href="#background">The Way Forward: Background Detection</a>
+    <a href="#authentication">This Website's Authentication</a>
+    <a href="#what">What Can You Do?</a>
 </div>
 
 <script>
@@ -232,42 +225,31 @@
   
   <!-- Introduction -->
   <section>
-    <h2 id="why">Why do CAPTCHAs Exist?</h2>
+    <h2 id="why">An Overview of CAPTCHAs</h2>
     <p>
-      CAPTCHAs (Completely Automated Public Turing test to tell Computers and Humans Apart) were created to protect websites from bots by verifying that the user is a real human. They serve as gatekeepers to prevent spam, abuse, and automated attacks.
+      CAPTCHAs (Completely Automated Public Turing test to tell Computers and Humans Apart) were created to protect websites from bots and 
+      verify that the user is a real human. They serve as gatekeepers to prevent spam, abuse, and automated attacks.
     </p>
     
     <ul>
-      <li><strong>Security:</strong> Prevents automated attacks and spam.</li>
-      <li><strong>User Verification:</strong> Differentiates humans from bots using interactive challenges.</li>
-      <li><strong>Evolution:</strong> Has evolved from simple text tests to sophisticated image and behavioral analysis.</li>
+      <li style="margin-bottom:5px;"><strong>Security:</strong> CAPTCHAs prevent automated attacks and spam.</li>
+      <li style="margin-bottom:5px;"><strong>User Verification:</strong> They differentiate humans from bots using interactive challenges.</li>
+      <li style="margin-bottom:5px;"><strong>Adaptable:</strong> CAPTCHAs have evolved from simple text tests to sophisticated image and behavioral analysis as technology has evolved.</li>
     </ul>
     
     <div class="highlight-box">
-      <p>"CAPTCHAs help protect websites from spam, brute force attacks, and other automated threats while ensuring that genuine users can access services seamlessly."</p>
+      <p>CAPTCHAs help protect websites from spam, brute force attacks, and other automated threats while ensuring that genuine users can access services seamlessly.</p>
     </div>
     
     <p>
-      Developed in the early 2000s, CAPTCHAs have transformed significantly. However, this evolution has often compromised accessibility for users with disabilities. Our project delves into these challenges and explores innovative solutions that balance robust security with improved accessibility.
+      Since being developed in the early 2000s, CAPTCHAs have significantly grown in use. However, they often fall short in terms of being
+      accessible to users with disabilities. This project dives into these challenges and explores potential solutions that provide a better 
+      balance of robust security and improved accessibility.
     </p>
   </section>
-
-  <section>
-    <h2 id="important">Why Does Accessibility in CAPTCHAs Matter?</h2>
-    <p>
-      CAPTCHAs are everywhere—but traditional implementations often impose significant challenges for individuals with disabilities. It’s <span class="highlight">crucial</span> that everyone can navigate the digital world without barriers. </p>
-    <p>Furthermore, it is extremely disgusting to see how some companies like 2Captcha are profiting off of user's disabilities by selling them CAPTCHA solving tools. </p>
-    <img src="pricing.png" style="max-width: 100%; border-radius: 20px;">
-    <p>As shown below, companies acknowledge that CAPTCHAs pose significant accessibility issues, but instead of addressing the problem, they look to profit off of the solution and the users that buy it out of necessity.</p>
-    <img src="accessibility.png" style="max-width: 100%; border-radius: 20px;">
-    <p>Click <a href="https://2captcha.com/p/captcha-and-accessibility" style="color: #000000;">here</a> to see the full Accessibility page for 2Captcha.</p>
-    <div class="highlight-box">
-      <p>Accessibility should be the default, not an afterthought. Everyone deserves to have equal access to tools and opportunities. </p>
-    </div>
-  </section>
   
-  <!-- Key Aspects / Features Section -->
-  <section>
+  <!-- Key Aspects / Features Section --> 
+  <!-- <section>
     <h2 id="key_research">Key Aspects of Our Research</h2>
     <div class="card-grid">
       <div class="card">
@@ -289,16 +271,16 @@
         </p>
       </div>
     </div>
-  </section>
+  </section> -->
   
   <!-- CAPTCHA Accessibility Challenges -->
   <section>
-    <h2 id="challenges">CAPTCHA Accessibility Challenges</h2>
+    <h2 id="challenges">Accessibility Challenges With CAPTCHAs</h2>
     <div class="card-grid">
       <!-- Visual Impairment Card -->
       <div class="card">
         <img src="difficult_to_read_captcha.png" alt="Person with visual impairment using a computer" />
-        <h3>Visual Impairment Challenges</h3>
+        <h3 style="text-align:center">Visual Impairment Challenges</h3>
         <p>
           Image-based CAPTCHAs present significant barriers:
         </p>
@@ -315,7 +297,7 @@
       <!-- Auditory Impairment Card -->
       <div class="card">
         <img src="audio-captcha.png" alt="Person wearing hearing aids" />
-        <h3>Auditory Impairment Challenges</h3>
+        <h3 style="text-align:center">Auditory Impairment Challenges</h3>
         <p>
           Audio CAPTCHAs can be problematic:
         </p>
@@ -336,7 +318,7 @@
       <!-- Cognitive Challenges Card -->
       <div class="card">
         <img src="cognitiveCaptcha.png" alt="Person frustrated with complex instructions" />
-        <h3>Cognitive Challenges</h3>
+        <h3 style="text-align:center">Cognitive Challenges</h3>
         <p>
           Complex instructions and time limits create significant barriers:
         </p>
@@ -352,7 +334,7 @@
       <!-- Motor Impairment Challenges Card -->
       <div class="card">
         <img src="motorCap.png" alt="Person using an adaptive mouse device" />
-        <h3>Motor Impairment Challenges</h3>
+        <h3 style="text-align:center">Motor Impairment Challenges</h3>
         <p>
           Interactive CAPTCHAs pose unique challenges for users with motor impairments:
         </p>
@@ -373,6 +355,20 @@
     <p style="font-size: 1rem; color: #555; text-align: center;">
       Sources: Stanford How Good are Humans at Solving CAPTCHAs?; A study on Accessibility of Google ReCAPTCHA Systems (Gaggi, 2022); CAPTCHA: Impact on User Experience of Users with Learning Disabilities (Ruti Gafni and Idan Nagar)
     </p>
+  </section>
+
+  <section>
+    <h2 id="important">Why Does Accessibility in CAPTCHAs Matter?</h2>
+    <p>
+      CAPTCHAs are everywhere across the web — but traditional implementations often impose significant challenges for individuals with disabilities. It’s <span class="highlight">crucial</span> that everyone can navigate the digital world without barriers. </p>
+    <p>Furthermore, companies like <a href="https://2captcha.com" target="_blank">2Captcha</a> are profiting off of these accessibility challenges by selling CAPTCHA solving tools. </p>
+    <img src="pricing.png" style="max-width: 100%; border-radius: 20px;">
+    <p>As shown below, it is clear that companies acknowledge the significant issues with CAPTCHAs, but instead of addressing the problem, they look to profit off of the solution and the users that buy it out of necessity.</p>
+    <img src="accessibility.png" style="max-width: 100%; border-radius: 20px;">
+    <p>Click <a href="https://2captcha.com/p/captcha-and-accessibility" style="color: #000000;">here</a> to see the full Accessibility page for 2Captcha.</p>
+    <div class="highlight-box">
+      <p>Accessibility should be the default, not an afterthought. Everyone deserves to have equal access to tools and opportunities. </p>
+    </div>
   </section>
   
   <!-- New Section: Summary Metrics -->
@@ -402,50 +398,69 @@
     </table>
   </section>
   
-  <!-- CAPTCHA Limitations & Global Impact -->
+
   <section>
-    <h2 id="limitations">CAPTCHA Limitations & Global Impact</h2>
+    <h2 id="limitations">What Are Other Issues With CAPTCHAs?</h2>
     <div class="card-grid">
-      <!-- Security vs Accessibility Tradeoffs Card -->
       <div class="card">
-        <img src="security_vs_accessibility.jpg" alt="Security vs Accessibility" />
-        <h3>Security vs. Accessibility Tradeoffs</h3>
-        <ul>
-          <li>More secure CAPTCHAs tend to be less accessible.</li>
-          <li>Simplified CAPTCHAs are easier but less effective.</li>
-          <li>Modern approaches can overcome this false dichotomy.</li>
-          <li>Equal access is <span class="highlight">mandated</span> by law in many countries.</li>
+        <h3 style="text-align:center">User Experience Impact</h3>
+        <ul style="margin-right: 1rem; margin-left: 1rem;">
+          <li>Increased form abandonment rates by <span class="highlight">30–40%</span>.</li>
+          <li>Creates frustration for all users and adds extra time to complete tasks.</li>
+          <li>Mobile users are disproportionately affected.</li>
         </ul>
       </div>
-      <!-- Privacy Concerns Card -->
+
       <div class="card">
-        <img src="privacy_concerns.jpg" alt="Privacy Concerns" />
-        <h3>Privacy Concerns</h3>
-        <ul>
-          <li>CAPTCHAs can track user behavior across sites.</li>
+
+        <h3 style="text-align:center">Privacy Concerns</h3>
+        <ul style="margin-right: 1rem; margin-left: 1rem;">
+          <li>CAPTCHA and alternative services can track user behavior across sites.</li>
           <li>Data may be used for <span class="highlight">marketing</span> purposes.</li>
-          <li>Potential violations of privacy regulations (e.g., GDPR).</li>
           <li>Users are often unaware of full tracking scope.</li>
         </ul>
       </div>
     </div>
+
+<!--
+  <section>
+    <h2 id="limitations">What Are Other Issues With CAPTCHAs?</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="security_vs_accessibility.jpg" alt="Security vs Accessibility" />
+        <h3 style="text-align:center">Security vs. Accessibility Tradeoffs</h3>
+        <ul>
+          <li>More secure CAPTCHAs tend to be less accessible.</li>
+          <li>But, simplified CAPTCHAs tend to be less effective.</li>
+          <li>Modern approaches can overcome this false dichotomy.</li>
+          <li>Equal access is <span class="highlight">mandated</span> by law in many countries.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card">
+          <img src="user_experience.jpg" alt="User Experience Impact" />
+          <h3 style="text-align:center">User Experience Impact</h3>
+          <ul>
+            <li>Increased form abandonment rates by <span class="highlight">30–40%</span>.</li>
+            <li>Creates frustration for all users and adds extra time to complete tasks.</li>
+            <li>Mobile users are disproportionately affected.</li>
+          </ul>
+        </div>
+    </div>
     
     <div class="card-grid">
-      <!-- User Experience Impact Card -->
       <div class="card">
         <img src="user_experience.jpg" alt="User Experience Impact" />
-        <h3>User Experience Impact</h3>
+        <h3 style="text-align:center">User Experience Impact</h3>
         <ul>
-          <li>Increases form abandonment rates by <span class="highlight">30–40%</span>.</li>
-          <li>Creates frustration for all users.</li>
-          <li>Adds extra time to complete tasks.</li>
+          <li>Increased form abandonment rates by <span class="highlight">30–40%</span>.</li>
+          <li>Creates frustration for all users and adds extra time to complete tasks.</li>
           <li>Mobile users are disproportionately affected.</li>
         </ul>
       </div>
-      <!-- Global Accessibility Card -->
       <div class="card">
         <img src="global_accessibility.jpg" alt="Global Accessibility" />
-        <h3>Global Accessibility</h3>
+        <h3 style="text-align:center">Global Accessibility</h3>
         <ul>
           <li>Language-specific challenges exclude non-native speakers.</li>
           <li>Cultural references may not translate globally.</li>
@@ -453,7 +468,7 @@
           <li>Disadvantages users in regions with limited bandwidth.</li>
         </ul>
       </div>
-    </div>
+    </div> -->
     
     <div class="card-grid1">
       <div class="card">
@@ -485,13 +500,13 @@
       <p>DISCLAIMER: The answers displayed are not direct quotes. All information and thoughts are from the respective Professors. However, aspects such as wording have been modified to ensure a better flow and user experience when reading.</p>
     </div>
     <div class="highlight-box" style="background-color: #c4ffe9; border-left: 4px solid #0f774c;">
-      <p>AKNOWLEDGEMENT: We would like to extend our deepest gratitude to Professor Urs Hengartner and Professor Jeff Avery for providing their valubale insights!</p>
+      <p>ACKNOWLEDGEMENT: We would like to extend our deepest gratitude to Professor Urs Hengartner and Professor Jeff Avery for providing their valuable insights!</p>
     </div>
     <div style="display: flex; flex-direction: row; justify-content: space-between;">
       <img src="prof-one.avif" style="max-width: 25%;">
       <div style="background-color: #012c5a; padding: 30px; display: flex; flex-direction: column; justify-content: center;">
         <h3 style="color: #eef9ff; margin-left: 15px; margin-top: 0px">Meet Professor Urs Hengartner!</h3>
-        <p style="margin: 0px; margin-left: 15px; color: #eef9ff;"> Professor Urs Hengartner is an Associate Professor at the University of Waterloo. He teaches courses related to Computer Security and Privacy, and User Authentication, which is also where his interests in research lie. This includes "authenticating users based on their behavioural or physiological biometrics." He recieved his M.S. and Ph.D in Computer Science from Carnegie Mellon. <br><i><b>Fun Fact: He attend grad school with the creator of CAPTCHAs and CEO of Duolingo, Luis von Ahn!</b></i></p>
+        <p style="margin: 0px; margin-left: 15px; color: #eef9ff;"> Professor Urs Hengartner is an Associate Professor at the University of Waterloo. He teaches courses related to Computer Security and Privacy, and User Authentication, which is also where his interests in research lie. This includes "authenticating users based on their behavioural or physiological biometrics." He recieved his M.S. and Ph.D in Computer Science from Carnegie Mellon. <br><i><b>Fun Fact: He attended grad school with the creator of CAPTCHAs and CEO of Duolingo, Luis von Ahn!</b></i></p>
         <p style="margin: 0px; margin-left: 15px; color: #eef9ff;">Read more about Professor Hengartner <a href="https://cs.uwaterloo.ca/~uhengart/" style="color: #eef9ff;">here!</a></p>
       </div>
      </div>
@@ -585,6 +600,41 @@
   </div>
   </section>
 
+  <section>
+    <h2 id="cornell">Cornell's Study & Evaluation of Modern CAPTCHAs</h2>
+    <div>
+      <img src="Cornell-University-Symbol.png" style="max-width: 40%; border-radius: 20px;" >
+      <img src="research-papers-1400x700.png" style="max-width: 45%; border-radius: 20px;">
+    </div>
+    <h3><b> <a href="https://arxiv.org/pdf/2307.12108" style="text-decoration: none;">Overview of Study: </a></b></h3>
+    <p> 
+      <strong>Participants: </strong> 1000-1400 People<br>
+      <strong> Purpose: </strong> To observe CAPTCHA solve time, user preference regarding CAPTCHAs, accuracy rate in solving CAPTCHAs, and whether factors such as demographics and experimental context affects solve time. <br>
+      <strong>Example Experiment Task: </strong> Each participant asked to solve 10 CAPTCHAs each. <br>
+      <strong> CAPTCHAs in Study: </strong>two reCAPTCHA v2 CAPTCHAs, two game-based CAPTCHAs from Arkose Labs, two hCAPTCHAs, one slider-based CAPTCHA from Geetest, and three types of distorted text CAPTCHAs <br>
+    </p>
+    <h3><b>Focusing on CAPTCHA Accuracy Results: </b></h3>
+    <div style="max-width: 50%;">
+      <a href="https://arxiv.org/pdf/2307.12108"><img src="accuracy-table.png"></a>
+    </div>
+    <p style="font-size: 1rem; color: gray; margin: 0px;">Source: Searles, A., Nakatsuka, Y., Ozturk, E., Paverd, A., Tsudik, G., & Enkoji, A. (2023). An Empirical Study & Evaluation of Modern CAPTCHAs. https://doi.org/10.48550/arxiv.2307.12108
+    </p>
+      <div>
+        <p style="margin: 0px; margin-top:10px;"><b>Findings: </b></p>
+        <ol style="margin-top: 5px; margin-bottom:10px;">
+          <li> The study shows that majority of the bots were able to solve the CAPTCHAs faster than humans and all of the CAPTCHAs had a bot accuracy pencentage greater than humans</li>
+          <li>Specifically, the bots usually had an accuracy of above 85%+, with most of them being above 96% </li>
+          <li>Humans on the otherhand had an accuracy in solving captchas 50%-85% of the time</li>
+          <li>These results show us that bots are already very advanced in solving captchas and can do it better than humans</li>
+        </ol>
+        <p style="font-size: 1rem; margin: 0px">Read the full study <a href="https://doi.org/10.48550/arxiv.2307.12108">here.</a></p>
+     </div>
+     <h3><b>Results and Implications </b></h3>
+     <div class="highlight-box">
+      <p>The difference in accuracy of solving CAPTCHAs between humans and bots is already very high. This means that if we make CAPTCHAs simpler to solve for humans in attempts to make them more accessible, they become even easier for bots to bypass. This highlights the 
+        limitations of the traditional CAPTCHAs in keeping up with modern day technology, and further supports the argument that CAPTCHA options may need to be redesigned entirely to ensure acessability. Reworking old options would not be sufficient as it's time for the industry and for companies to look towards completely new solutions.</p>
+    </div>
+  </section>
 
   <section class="summary-metrics">
     <h2 id="attempt_1">Attempt 1: Redesign of Existing CAPTCHAs</h2>
@@ -648,6 +698,20 @@
         </tr>
       </table>
 
+    <!--
+      <h3>Hassan's Experience with ADHD</h3>
+      <p>To further understand the challenges that CAPTCHAs present for individuals with cognitive disabilities, we interviewed <strong>Hassan</strong>, a student with ADHD. He attempted the original text-based CAPTCHA from Attempt 1 and shared his experience navigating through it.</p>
+
+
+
+      <p>Hassan mentioned that distorted characters, overlapping text, and background noise caused significant difficulty. His experience highlighted the cognitive overload that CAPTCHAs can introduce, especially when under pressure. Even after focusing intensely, he misinterpreted several characters, which led to a failed attempt—similar to the issues encountered by the language model.</p>
+
+      <div class="highlight-box">
+        <p><strong>Takeaway:</strong> Real-world user feedback—especially from people with disabilities—is essential when evaluating CAPTCHA accessibility. Redesigns must not only test better with AI, but more importantly, with real humans like Hassan who face these challenges daily.</p>
+      </div>
+    -->
+      
+
       <h3>Image-Based CAPTCHAs</h3>
       <p>The following was tested with the OpenAI's ChatGPT GPT-4-turbo LLM model on March 31st, 2025. 
         The prompt we used was posing as an elderly woman who is trying to log into her bank account to urgently withdraw money. This creates a scenario for the LLM to 
@@ -693,42 +757,6 @@
       </table>
 
       </section>
-
-  <section>
-    <h2 id="cornell">Cornell's Study & Evaluation of Modern CAPTCHAs</h2>
-    <div>
-      <img src="Cornell-University-Symbol.png" style="max-width: 40%; border-radius: 20px;" >
-      <img src="research-papers-1400x700.png" style="max-width: 45%; border-radius: 20px;">
-    </div>
-    <h3><b> <a href="https://arxiv.org/pdf/2307.12108" style="text-decoration: none;">Overview of Study: </a></b></h3>
-    <p> 
-      <strong>Participants: </strong> 1000-1400 People<br>
-      <strong> Purpose: </strong> To observe CAPTCHA solve time, user preference regarding CAPTCHAs, accuracy rate in solving CAPTCHAs, and whether factors such as demographics and experimental context affects solve time. <br>
-      <strong>Example Experiment Task: </strong> Each participant asked to solve 10 CAPTCHAs each. <br>
-      <strong> CAPTCHAs in Study: </strong>two reCAPTCHA v2 CAPTCHAs, two game-based CAPTCHAs from Arkose Labs, two hCAPTCHAs, one slider-based CAPTCHA from Geetest, and three types of distorted text CAPTCHAs <br>
-    </p>
-    <h3><b>Focusing on CAPTCHA Accuracy Results: </b></h3>
-    <div style="max-width: 50%;">
-      <a href="https://arxiv.org/pdf/2307.12108"><img src="accuracy-table.png"></a>
-    </div>
-    <p style="font-size: 1rem; color: gray; margin: 0px;">Source: Searles, A., Nakatsuka, Y., Ozturk, E., Paverd, A., Tsudik, G., & Enkoji, A. (2023). An Empirical Study & Evaluation of Modern CAPTCHAs. https://doi.org/10.48550/arxiv.2307.12108
-    </p>
-      <div>
-        <p style="margin: 0px; margin-top:10px;"><b>Findings: </b></p>
-        <ol style="margin-top: 5px; margin-bottom:10px;">
-          <li> The study shows that majority of the bots were able to solve the CAPTCHAs faster than humans and all of the CAPTCHAs had a bot accuracy pencentage greater than humans</li>
-          <li>Specifically, the bots usually had an accuracy of above 85%+, with most of them being above 96% </li>
-          <li>Humans on the otherhand had an accuracy in solving captchas 50%-85% of the time</li>
-          <li>These results show us that bots are already very advanced in solving captchas and can do it better than humans</li>
-        </ol>
-        <p style="font-size: 1rem; margin: 0px">Read the full study <a href="https://doi.org/10.48550/arxiv.2307.12108">here.</a></p>
-     </div>
-     <h3><b>Result Conclusions and Implications: </b></h3>
-     <div class="highlight-box">
-      <p>The difference in accuracy of solving CAPTCHAs between humans and bots is already very high. This means that if we make CAPTCHAs simpler to solve for humans in attempts to make them more accessible, they become even easier for bots to bypass. This highlights the 
-        limitations of the traditional CAPTCHAs in keeping up with modern day technology, and further supports the argument that CAPTCHA options may need to be redesigned entirely to ensure acessability. Reworking old options would not be sufficient as it's time for the industry and for companies to look towards completely new solutions.</p>
-    </div>
-  </section>
 
   <section>
     <h2 id="attempt_2">Attempt 2: Theory-Crafted CAPTCHA Alternatives</h2>
@@ -831,7 +859,7 @@
           </p>
         </div>
       </div>
-      <div class="card-grid" style="text-align:center">
+      <!-- <div class="card-grid" style="text-align:center">
         <div class="card">
           <h3 class="highlight">The <code>eval</code> Function</h3>
           <p>
@@ -848,7 +876,7 @@
             attributes to the DOM that can reveal bot activity, which this website's script can pick up on.
           </p>
         </div>
-      </div>
+      </div> -->
       <div class="card-grid" style="text-align:center">
         <div class="card">
           <h3 class="highlight">The Navigator Object</h3>
@@ -862,7 +890,7 @@
           <h3 class="highlight">The Headless Indicator</h3>
           <p>
             The Headless flag in a browser is a common indication of a user agent that is 
-            designed to scrape website data or perform other script-based activities. With these two property checks, most basic bot activity 
+            designed to scrape website data or perform other script-based activities. With the Headless and navigator property checks, most basic bot activity 
             can be detected.
           </p>
         </div>
@@ -892,7 +920,7 @@
           <h3>Copy-paste this code into <a target="_blank" href="https://chrome.browserless.io/debugger/">Browserless Debugger</a></h3>
           <p>
             <code>
-              export default async ({ page }: { page: Page }) => { await page.goto('https://google.com/'); }
+              export default async ({ page }: { page: Page }) => { await page.goto('https://aidenar.github.io/492Web/'); }
             </code>
           </p>
         </div>
@@ -900,11 +928,6 @@
       <p>
         This is what the result should look like after clicking play!
       </p>
-
-      <!-- <h3>Copy-paste this code:</h3>
-      <code>
-        export default async ({ page }: { page: Page }) => { await page.goto('https://google.com/'); }
-      </code> -->
       <img src="Browserless Debugger.png" alt="Bot Detected Screenshot" style="max-width: 100%; height: auto; border-radius: 15px; margin-top:20px;">
 
     </div>
