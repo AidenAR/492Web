@@ -45,12 +45,12 @@ function detectInconsistentEval() {
 
 // quick scroll detection
 let scrollEvents = 0;
-setTimeout('document.addEventListener("scroll", () => (scrollEvents += 1));', 50);
+setTimeout('document.addEventListener("scroll", () => (scrollEvents += 1));', 75);
 // document.addEventListener("scroll", () => (scrollEvents += 1));
 
 function detectQuickScroll() {
     console.log(scrollEvents);
-    return (scrollEvents > 1) ? true : false;
+    return (scrollEvents > 2 ? true : false);
 }
 
 // display the results
