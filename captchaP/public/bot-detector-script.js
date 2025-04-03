@@ -16,6 +16,8 @@ function detectBot() {
     for (const i in indicators) {
         if (indicators[i]) {    // if any are true, set verdict to true
             verdict = true;
+            console.log(i);
+            console.log("\n");
         }
     }
 
